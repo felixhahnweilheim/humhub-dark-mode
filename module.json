@@ -1,0 +1,23 @@
+{
+    "id": "dark-mode",
+    "version": "0.1.0",
+    "name": "Dark Mode Theme",
+    "description": "Dark Mode Theme for HumHub",
+    "humhub": {
+        "minVersion": "1.14"
+    },
+    "keywords": [
+        "dark mode", "dark"
+    ],
+    "screenshots": [
+        
+    ],
+    "homepage": "https://github.com/felixhahnweilheim/humhub-dark-mode",
+    "authors": [
+        {
+            "name": "Felix Hahn",
+            "email": "info@hahn-felix.de",
+            "role": "Developer"
+        }
+    ]  
+}
