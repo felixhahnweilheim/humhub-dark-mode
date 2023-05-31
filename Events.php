@@ -4,7 +4,6 @@ namespace humhub\modules\darkMode;
 
 use humhub\modules\darkMode\widgets\SwitchButton;
 use Yii;
-use humhub\modules\ui\icon\widgets\Icon;
 use yii\helpers\Url;
 
 class Events
