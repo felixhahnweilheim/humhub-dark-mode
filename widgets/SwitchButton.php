@@ -1,4 +1,5 @@
 <?php
+
 namespace humhub\modules\darkMode\widgets;
 
 use humhub\components\Widget;
@@ -8,9 +9,6 @@ use humhub\components\Widget;
  */
 class SwitchButton extends Widget
 {
-    /**
-     * Creates the Wall Widget
-     */
     public function run()
     {
         return $this->render('switchButton');

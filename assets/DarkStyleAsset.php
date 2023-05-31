@@ -4,7 +4,7 @@ namespace humhub\modules\darkMode\assets;
 
 use yii\web\AssetBundle;
 
-class DarkModeAsset extends AssetBundle
+class DarkStyleAsset extends AssetBundle
 {
     public $publishOptions = [
         'forceCopy' => false
@@ -12,7 +12,7 @@ class DarkModeAsset extends AssetBundle
     
     public $sourcePath = '@dark-mode/resources';
     
-    public $js = [
-        'js/darkmode.js',
+    public $css = [
+        'css/dark.css',
     ];
 }

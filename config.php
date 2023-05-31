@@ -1,7 +1,6 @@
 <?php
 
 use yii\base\Event;
-use humhub\components\ModuleManager;
 use humhub\widgets\NotificationArea;
 use humhub\modules\darkMode\Events;
 

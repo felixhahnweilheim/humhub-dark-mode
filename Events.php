@@ -3,8 +3,6 @@
 namespace humhub\modules\darkMode;
 
 use humhub\modules\darkMode\widgets\SwitchButton;
-use Yii;
-use yii\helpers\Url;
 
 class Events
 {

@@ -1,9 +1,22 @@
 <?php
+
 use humhub\modules\ui\icon\widgets\Icon;
 use humhub\modules\darkMode\assets\DarkModeAsset;
+use humhub\modules\darkMode\assets\DarkStyleAsset;
 
 DarkModeAsset::register($this);
+
+$mode = 'dark';
+
+if ($mode == 'dark') {
+    DarkStyleAsset::register($this);
+    $icon = Icon::get('sun-o');
+} else {
+    $icon = Icon::get('moon-o');
+}
 ?>
 <div class="btn-group">
-    <a href="#" id="switch-button"><?= Icon::get('moon-o') ?></a>
+    <a href="#" id="switch-button" class="currently-<?= $mode ?>">>
+        <?= $icon ?>
+    </a>
 </div>
