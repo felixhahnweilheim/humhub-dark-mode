@@ -15,4 +15,7 @@ class DarkModeAsset extends AssetBundle
     public $css = [
         'css/dark.css',
     ];
+    public $js = [
+        'js/darkmode.js',
+    ];
 }
