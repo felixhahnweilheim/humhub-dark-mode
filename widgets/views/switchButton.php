@@ -6,7 +6,11 @@ use humhub\modules\darkMode\assets\DarkStyleAsset;
 
 DarkModeAsset::register($this);
 
-$mode = 'dark';
+$mode = 'light';
+
+if(!empty($_COOKIE['theme'])) {
+	$mode = $_COOKIE['theme'];
+}
 
 if ($mode == 'dark') {
     DarkStyleAsset::register($this);
@@ -16,7 +20,7 @@ if ($mode == 'dark') {
 }
 ?>
 <div class="btn-group">
-    <a href="#" id="switch-button" class="currently-<?= $mode ?>">>
+    <a href="#" id="switch-button" class="currently-<?= $mode ?>">
         <?= $icon ?>
     </a>
 </div>

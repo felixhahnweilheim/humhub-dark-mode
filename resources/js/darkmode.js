@@ -5,18 +5,19 @@ humhub.module('dark-mode', function(module, require, $) {
     // Listen for a click on the button 
     btn.addEventListener("click", function() {
         // Save the choice in a cookie
-        if(btn.classList.contains("currently-dark")) {
+        if (btn.classList.contains("currently-dark")) {
             setCookie('theme', 'light', 365);
             location.reload();
         } else {
             setCookie('theme', 'dark', 365);
             location.reload();
-        });
-    
-    function setCookie(cname, cvalue, exdays) {
-        const d = new Date();
-        d.setTime(d.getTime() + (exdays*24*60*60*1000));
-        let expires = "expires="+ d.toUTCString();
-        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
+        }
+    });
 });
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
