@@ -1,0 +1,65 @@
+/**
+ * Define or overwrite your theme variables here.
+ *
+ * Check for @humhub/static/less/variables.less file for all available variables.
+ * 
+ * You can also access your variables within your view files by calling Yii::$app->view->theme->variable('myVariable');
+ *
+ * You can disable the import of humhub theme components by using variables of the format @prev-{component} e.g.:
+ * This will prevent comment.less component from beeing imported.
+ * e.g.:
+ * @prev-comment: true;
+ *
+**/
+
+//
+// Text colors
+// --------------------------------------------------
+
+// Default body text color.
+@text-color-main: #ddd;
+
+// used for some icons and buttons etc. - former @font2
+@text-color-secondary: #bbb;
+
+// highlighted text like some active links hovered links etc. - former @font3
+@text-color-highlight: #fff;
+
+// side information like dates, placeholder, some dropdown headers - former @font4
+@text-color-soft: #dddddd;
+
+// also side information wall entry links (like/comment), help blocks in forms etc.  - former @font5
+@text-color-soft2: #616161;
+
+// used in gridview summary and installer - former @font1
+@text-color-soft3: #594e49;
+
+// used as contrast color for @primary, @info, @success, @warning, @danger backgrounds for buttons etc.
+// Note that @default does not use a contrast color @default is normally combined with @text-color-secondary
+@text-color-contrast: #000;
+
+
+//
+// Background colors
+// --------------------------------------------------
+
+// main content background color should be in contrast with @text-color-main, @text-color-secondary and other text colors
+@background-color-main: #222;
+
+// used beside others for tabs - former @background1
+@background-color-secondary: #333;
+
+// page background which is also used for other ui components as comment box etc. - former @background2
+@background-color-page: #000;
+
+// Informative highlighting color
+// (e.g. Comment Permalink, Shared Item, Calendar CurDay, Wiki Active Page Nav, Mail Module Speech Bubble)
+@background-color-highlight: lighten(desaturate(spin(@info, 2), 17), 49);
+
+// Informative highlighting soft color
+// (e.g. Wiki Active Category)
+@background-color-highlight-soft: lighten(desaturate(spin(@info, 6), 16), 55);
+
+// Additional background colors
+@background3: #393939;
+@background4: #5e5e5e;
