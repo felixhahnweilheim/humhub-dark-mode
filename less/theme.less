@@ -46,3 +46,40 @@
 a.list-group-item, button.list-group-item {
     color: @text-color-main;
 }
+
+// Status bar
+.status-bar-body {
+    background-color: fade(@background-color-main, 70);
+}
+
+// Cards
+.container-cards {
+    .card {
+        .card-panel {
+            background-color: @background3;
+        }
+        .card-body {
+            .card-details {
+                color: @text-color-soft;
+            }
+        }
+    }
+}
+
+// Modal Windows
+.modal-content {
+    background-color: @background-color-secondary;
+}
+.modal-content .modal-header .close {
+    color: @text-color-highlight;
+}
+
+// Input group addon (e.g. Spaces button in My Spaces dropdown)
+.input-group-addon {
+    background-color: lighten(@background4, 16);
+}
+
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: @background-color-secondary;
+}
