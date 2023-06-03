@@ -49,7 +49,7 @@ a.list-group-item, button.list-group-item {
 
 // Status bar
 .status-bar-body {
-    background-color: fade(@background-color-main, 70);
+    background-color: fade(@background4, 70);
 }
 
 // Cards
@@ -82,4 +82,39 @@ a.list-group-item, button.list-group-item {
 
 .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
     background-color: @background-color-secondary;
+}
+
+// Media List
+.media-list li {
+    border-color: @background4;
+}
+
+.media-list {
+    li.new {
+        border-left: 3px solid @info;
+        background-color: darken(@info, 30);
+    }
+}
+
+// List Group (e.g. account left sidebar menu)
+.list-group-item {
+    border-color: @background4 !important;
+}
+
+// Nav Tabs
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {
+    background-color: @background3;
+}
+
+.nav > li > a:focus, .nav > li > a:hover {
+    background-color: @background-color-secondary;
+}
+
+
+#topbar-second .nav > li > a#space-menu {
+    border-color: @background4;
+}
+
+.select2-dropdown {
+    background-color: @background4;
 }
