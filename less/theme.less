@@ -202,15 +202,23 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 
 // Additional post types in post form
-#contentFormMenu .nav-tabs > li > a, #contentFormMenu .nav-tabs > li.active > a {
+#contentFormMenu .nav-tabs > li > a, #contentFormMenu .nav-tabs > li.active > a, #contentFormMenu .content-create-menu-more > i  {
     background: @background-color-secondary;
     border-color: @background-color-main;
 }
 #contentFormMenu .nav-tabs > li > a:hover, #contentFormMenu .nav-tabs > li.active > a:hover, #contentFormMenu .nav-tabs > li > a.active, #contentFormMenu .nav-tabs > li.active > a.active {
-    color: @text-color-highlight;
+    color: @text-color-main;
+    background-color: @background-color-main;
 }
 #contentFormMenu .nav-tabs > li > a, #contentFormMenu .nav-tabs > li.active > a {
     color: @text-color-secondary;
+}
+#contentFormMenu .content-create-menu-more > i:hover {
+    background: @background-color-main;
+    color: @text-color-main;
+}
+#contentFormMenu .content-create-menu-more .dropdown-menu {
+    border-color: @background4;
 }
 
 // Wiki Module
@@ -309,4 +317,50 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th,
 .fc-content, .fc-divider, .fc-list-heading td, .fc-list-view, .fc-popover, .fc-row, tbody, td, th, thead {
     border-color: @background4;
+}
+
+// Breadcrumb (e.g. top of cfiles page in space)
+.breadcrumb {
+    background-color: @background3;
+}
+
+// Checkbox
+input[type="checkbox"], input[type="radio"] {
+    background: @background3;
+}
+// Tasks checkbox
+.task-checklist label.item-finished input[type="checkbox"]:checked::after {
+    color: @background-color-page;
+}
+
+// Panel body (especially for Calendar filter in space)
+.panel .panel-body {
+    background-color: @background-color-main !important;
+}
+
+// External Calendar textarea
+.external-calendar-overview textarea {
+    color: @background-color-page;
+}
+
+// Calendar heading
+.fc-header-toolbar h2 {
+    color: @text-color-main;
+}
+
+// Custom Pages
+.target-page-list-head {
+    background-color: @background4;
+}
+.target-page-list-grid {
+    border-color: @background4;
+}
+
+// Jumbotron (Admin -> Information)
+.jumbotron {
+    background-color: @background-color-secondary;
+}
+// Alert info (e.g. Admin -> Information)
+.alert-info {
+    background-color: #323a3f;
 }
