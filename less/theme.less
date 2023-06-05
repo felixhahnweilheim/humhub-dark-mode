@@ -48,6 +48,9 @@
 #topbar-second .nav > li > a:hover, #topbar-second .nav > li.active {
     background-color: @background3;
 }
+#topbar-second .nav > li > ul > li > a {
+    background-color: @background-color-page;
+}
 
 // List group item (e.g. admin sidebar)
 .list-group-item {
@@ -59,7 +62,7 @@ a.list-group-item, button.list-group-item {
 
 // Status bar
 .status-bar-body {
-    background-color: fade(@background4, 70);
+    background-color: fade(@background4, 50);
 }
 
 // Cards
@@ -239,4 +242,37 @@ a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, 
 }
 .profile-banner-image-container .img-profile-header-background {
     filter: brightness(50%);
+}
+
+// Pagination
+.pagination > li > a, .pagination > li > span, .pagination > .disabled > a, .pagination > .disabled > a:focus, .pagination > .disabled > a:hover, .pagination > .disabled > span, .pagination > .disabled > span:focus, .pagination > .disabled > span:hover {
+    background-color: @background-color-secondary;
+    border-color: @background4;
+}
+.pagination > li > a:focus, .pagination > li > a:hover, .pagination > li > span:focus, .pagination > li > span:hover {
+    background-color: @background4;
+    border-color: @background4;
+}
+
+// Buttons focus
+.btn-default.active.focus, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open > .dropdown-toggle.btn-default.focus, .open > .dropdown-toggle.btn-default:focus, .open > .dropdown-toggle.btn-default:hover {
+    background-color: @background4;
+}
+
+// Module cards (e.g. in space administration)
+.container-modules .card-module .card-panel > div:not(.card-status) {
+    background-color: @background-color-secondary;
+}
+.container-modules .card-module .card-title {
+    color: @text-color-main;
+}
+
+// Sidebar background (especially for mobile)
+.layout-sidebar-container {
+    background-color: @background-color-page !important;
+}
+
+// My Spaces dropdown divider
+.dropdown-menu .divider {
+    background-color: @background4;
 }
