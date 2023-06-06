@@ -9,6 +9,12 @@
     border-color: fade(@text-color-highlight, 15);
     box-shadow: 0 6px 12px @background-color-page;
 }
+.dropdown-menu > li > a, .dropdown-menu > li > a:hover {
+    color: @text-color-main;
+}
+.dropdown-menu > li > a:hover {
+    background: @background3;
+}
 .modal .dropdown-menu li, .panel .dropdown-menu li, .nav-tabs .dropdown-menu li {
     border-color: fade(@text-color-highlight, 15);
 }
@@ -125,7 +131,7 @@ a.list-group-item, button.list-group-item {
 .media-list {
     li.new {
         border-left: 3px solid @info;
-        background-color: darken(@info, 20);
+        background-color: darken(@info, 27);
     }
 }
 
@@ -368,4 +374,37 @@ input[type="checkbox"], input[type="radio"] {
 // Gallery Heading
 #gallery-container > .panel-heading {
     background-color: @background4 !important;
+}
+
+// Tasks
+.task-list-header > .panel-body {
+    background-color: @background3 !important;
+}
+.task-list-header h4 {
+    color: @text-color-main;
+}
+.task-list-li, .task-list-items .task-list-task-completed-show-more {
+    background-color: @background-color-secondary;
+}
+.task-list-li .closed-task-lists-container, .task-list .pagination-container, #task-container .panel-heading {
+    background-color: @background-color-main;
+}
+.task-list-li, .task-list .pagination-container {
+    border-color: @background4;
+}
+.task-list-li.task-list-li-collapsed .task-toggled-color, .task-overview label {
+    color: @text-color-main;
+}
+.task-overview #task-filter-nav, .task-overview #filter-tasks-list .media-list li, .task-overview #filter-tasks-list .media-list .empty {
+    background: @background-color-secondary;
+    color: @text-color-secondary;
+}
+
+// Tasks Hover
+.task-list-container .task-list-title-bar > div:hover,
+.task-list-items .task-list-item .task-list-task-title-bar > div:hover {
+    background: @background4;
+}
+.closed-task-list-view li:hover {
+    background-color: #4d443b !important;
 }
