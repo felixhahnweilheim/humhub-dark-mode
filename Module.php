@@ -10,10 +10,10 @@ class Module extends \humhub\components\Module {
 
     // Translatable Module Name
     public function getName() {
-        return Yii::t('DarkModeModule.admin', 'Dark Mode for HumHub');
+        return Yii::t('DarkModeModule.admin', 'Dark Mode');
     }
     // Translatable Module Description
     public function getDescription() {
-        return Yii::t('DarkModeModule.admin', 'Add a Dark Mode to HumHub - based on the community theme');
+        return Yii::t('DarkModeModule.admin', 'Adds a Dark Mode to HumHub - based on the community theme');
     }
 }

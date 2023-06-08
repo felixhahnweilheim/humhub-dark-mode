@@ -11,3 +11,9 @@ Once the button has been clicked, a cookie ("theme") is added and the page is re
 ## Theme Compatibility
 
 Technically, it works with any theme. But the dark styles do not adapt to the current theme. So it is recommended to use it with the community theme.
+
+## Credits
+
+Graham H (sponsor)
+
+[Felix Hahn](https://github.com/felixhahnweilheim) (developer)

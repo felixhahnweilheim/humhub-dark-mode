@@ -1,8 +1,8 @@
 {
     "id": "dark-mode",
     "version": "0.2.2",
-    "name": "Dark Mode Theme",
-    "description": "Dark Mode for HumHub",
+    "name": "Dark Mode",
+    "description": "Adds a Dark Mode to HumHub - based on the community theme",
     "humhub": {
         "minVersion": "1.14"
     },
