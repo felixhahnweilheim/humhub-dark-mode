@@ -1,6 +1,6 @@
 {
     "id": "dark-mode",
-    "version": "0.2.2",
+    "version": "1.0.0-beta1",
     "name": "Dark Mode",
     "description": "Adds a Dark Mode to HumHub - based on the community theme",
     "humhub": {
