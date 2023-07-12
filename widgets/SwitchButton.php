@@ -2,6 +2,8 @@
 
 namespace humhub\modules\darkMode\widgets;
 
+use humhub\components\Widget;
+
 /**
  * Button for switching between dark and light mode
  */
