@@ -13,6 +13,6 @@ class DarkStyleAsset extends AssetBundle
     public $sourcePath = '@dark-mode/themes/DarkHumHub';
     
     public $css = [
-        'css/dark.css',
+        'css/theme.css',
     ];
 }
