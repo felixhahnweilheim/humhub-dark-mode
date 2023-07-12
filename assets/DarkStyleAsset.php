@@ -2,7 +2,7 @@
 
 namespace humhub\modules\darkMode\assets;
 
-use humhub\modules\ui\helpers\ThemeHelper;
+use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 use yii\web\AssetBundle;
 
