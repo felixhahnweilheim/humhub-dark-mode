@@ -12,7 +12,7 @@ class DarkStyleAsset extends AssetBundle
         'forceCopy' => false
     ];
 
-    public $sourcesPath = '@dark-mode/themes/DarkHumHub';
+    public $sourcePath = '@dark-mode/themes/DarkHumHub';
     
     public $css = [
         'css/theme.css',
@@ -23,6 +23,6 @@ class DarkStyleAsset extends AssetBundle
         $themeName = Yii::$app->getModule('dark-mode')->settings->get('theme', 'DarkHumHub');
         $theme = ThemeHelper::getThemeByName($themeName);
         
-        $this->sourcesPath = $theme->basePath;
+        $this->sourcePath = $theme->basePath;
     }
 }
