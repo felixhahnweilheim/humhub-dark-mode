@@ -7,6 +7,9 @@ use yii\helpers\Html;
 ?>
 
 <div class="panel pabel-default">
+    <div class="panel-heading">
+        <?= \Yii::t('DarkModeModule.base', '<strong>Dark Mode</strong> module configuration') ?>
+    </div>
     <div class="panel-body">
         <?php $form = ActiveForm::begin(['id' => 'configure-form']);?>
 
