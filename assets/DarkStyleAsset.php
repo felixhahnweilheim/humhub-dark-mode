@@ -10,7 +10,7 @@ class DarkStyleAsset extends AssetBundle
         'forceCopy' => false
     ];
     
-    public $sourcePath = '@dark-mode/resources';
+    public $sourcePath = '@dark-mode/themes/DarkHumHub';
     
     public $css = [
         'css/dark.css',
