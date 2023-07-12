@@ -2,6 +2,7 @@
 
 use humhub\modules\darkMode\models\Config;
 use humhub\modules\ui\form\widgets\ActiveForm;
+use yii\helpers\Html;
 
 ?>
 <div class="panel-body">
