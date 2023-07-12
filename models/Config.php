@@ -4,7 +4,6 @@ namespace humhub\modules\darkMode\models;
 
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use humhub\libs\DynamicConfig;
-use yii\helpers\Html;
 use Yii;
 
 /**
