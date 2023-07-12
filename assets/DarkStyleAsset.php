@@ -20,7 +20,7 @@ class DarkStyleAsset extends AssetBundle
     
     public function init()
     {
-        $themeName = Yii::$app->getModule('dark-mode')->get('theme', 'DarkHumHub');
+        $themeName = Yii::$app->getModule('dark-mode')->settings->get('theme', 'DarkHumHub');
         $theme = ThemeHelper::getThemeByName($themeName);
         
         $this->sourcesPath = $theme->basePath;
