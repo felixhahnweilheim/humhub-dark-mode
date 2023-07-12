@@ -2,6 +2,8 @@
 
 namespace humhub\modules\darkMode\assets;
 
+use humhub\modules\ui\helpers\ThemeHelper;
+use Yii;
 use yii\web\AssetBundle;
 
 class DarkStyleAsset extends AssetBundle
