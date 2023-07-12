@@ -3,7 +3,6 @@
 namespace humhub\modules\darkMode\models;
 
 use humhub\modules\ui\view\helpers\ThemeHelper;
-use humhub\libs\DynamicConfig;
 use Yii;
 
 /**
@@ -49,8 +48,6 @@ class Config extends \yii\base\Model
         $settings = Yii::$app->getModule('dark-mode')->settings;
         
         $settings->set('theme', $this->theme);
-        
-        DynamicConfig::rewrite();
 
         return true;
     }

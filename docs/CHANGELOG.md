@@ -1,5 +1,14 @@
 Changelog
 =========
+## 1.0.0-beta2 (TBA)
+- Remove switch button (browser dark mode is used instead) - removes use of cookie and javascript
+- make dark theme selectable (configuration page added)
+- move stylesheet into new "DarkHumHub" theme
+- add CSS "!important" rules for external modules in default dark theme
+
+## 1.0.0-beta1 (8/6/2023)
+- update documentation
+
 ## 0.2.1 (6/6/2023)
 - Enh: add SameSite attribute to cookie
 - Enh: documentation

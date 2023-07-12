@@ -1,8 +1,8 @@
 {
     "id": "dark-mode",
-    "version": "1.0.0-beta1",
+    "version": "1.0.0-beta2",
     "name": "Dark Mode",
-    "description": "Adds a Dark Mode to HumHub - based on the community theme",
+    "description": "Adds a Dark Mode to HumHub",
     "humhub": {
         "minVersion": "1.14"
     },
@@ -10,7 +10,7 @@
         "dark mode", "dark"
     ],
     "screenshots": [
-        "resources/Screenshot_1.png", "resources/Screenshot_2.png", "resources/Screenshot_3.png"
+        "resources/Screenshot_1.png"
     ],
     "homepage": "https://github.com/felixhahnweilheim/humhub-dark-mode",
     "authors": [
