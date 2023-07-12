@@ -35,7 +35,7 @@ class Config extends \yii\base\Model
         ];
     }
     
-    public function attributeLabels()
+    public function attributeHints()
     {
         return [
             'theme' => Yii::t('DarkModeModule.admin', 'The stylesheet of the selected theme will be used for the dark mode.')
