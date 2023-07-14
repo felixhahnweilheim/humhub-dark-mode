@@ -2,12 +2,12 @@
 
 namespace humhub\modules\darkMode;
 
-use humhub\modules\darkMode\widgets\SwitchButton;
+use humhub\modules\darkMode\widgets\DarkStyle;
 
 class Events
 {
-    public static function onNotificationAddonInit($event)
+    public static function onLayoutAddonsInit($event)
     {
-        $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
+        $event->sender->addWidget(DarkStyle::class);
     }
 }
