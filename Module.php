@@ -2,6 +2,7 @@
 
 namespace humhub\modules\darkMode;
 
+use yii\helpers\Url;
 use Yii;
 
 class Module extends \humhub\components\Module {
@@ -14,6 +15,10 @@ class Module extends \humhub\components\Module {
     }
     // Translatable Module Description
     public function getDescription() {
-        return Yii::t('DarkModeModule.admin', 'Adds a Dark Mode to HumHub - based on the community theme');
+        return Yii::t('DarkModeModule.admin', 'Adds a Dark Mode to HumHub');
+    }
+    // Link to configuration page
+    public function getConfigUrl() {
+        return Url::to(['/dark-mode/config']);
     }
 }
