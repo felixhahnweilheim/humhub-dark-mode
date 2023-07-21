@@ -19,6 +19,6 @@ class Module extends \humhub\components\Module {
     }
     // Link to configuration page
     public function getConfigUrl() {
-        return Url::to(['/dark-mode/config']);
+        return Url::to(['/dark-mode/admin']);
     }
 }

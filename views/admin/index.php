@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 ?>
 
-<div class="panel pabel-default">
+<div class="panel panel-default">
     <div class="panel-heading">
         <?= \Yii::t('DarkModeModule.base', '<strong>Dark Mode</strong> module configuration') ?>
     </div>
