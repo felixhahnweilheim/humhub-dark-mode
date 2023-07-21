@@ -14,7 +14,7 @@ class UserController extends BaseAccountController
         $form = new UserSetting();
 
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
-            return ModalClose::widget(['saved' => true]);
+            return ModalClose::widget(['saved' => true, 'reload' => true]);
         }
 
         return $this->renderAjax('index', ['model' => $form]);
