@@ -16,6 +16,6 @@ class UserController extends BaseAccountController
     //        $this->view->saved();
     //    }
 
-        return $this->render('index', /*['model' => $form]*/);
+        return $this->renderAjax('index', /*['model' => $form]*/);
     }
 }
