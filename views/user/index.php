@@ -1,10 +1,19 @@
 <?php
+
+use humhub\modules\ui\form\widgets\ActiveForm;
+use humhub\widgets\ModalButton;
 use humhub\widgets\ModalDialog;
+
 ?>
 
 <?php ModalDialog::begin(['header' => Yii::t('DarkModeModule.base', '<strong>Dark Mode</strong> Options')]); ?>
+<?php $form = ActiveForm::begin(); ?> 
 <div class="modal-body">
-    <?= Yii::t('VerifiedModule.base', 'Welcome to ' . Yii::$app->name . ' verification center, once we confirm the payment you will receive a notification stating that your account has been verified.') ?>
-    <hr>
-    </div>
+    <?= $form->field($model, 'darkMode')->radioList($model->getOptions()); ?>
+</div>
+<div class="modal-footer">
+    <?= ModalButton::cancel() ?>
+    <?= ModalButton::submitModal() ?>
+</div>
+<?php ActiveForm::end();?>
 <?php ModalDialog::end(); ?>
