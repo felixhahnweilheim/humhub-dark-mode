@@ -14,7 +14,8 @@ class UserController extends BaseAccountController
         $form = new UserSetting();
 
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
-            return ModalClose::widget(['saved' => true, 'reload' => true]);
+            return ModalClose::widget(['saved' => true]) .
+				' <script ' . \humhub\libs\Html::nonce() . '>$(function () { location.reload() }); </script>';
         }
 
         return $this->renderAjax('index', ['model' => $form]);
