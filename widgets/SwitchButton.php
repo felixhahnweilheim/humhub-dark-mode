@@ -14,6 +14,7 @@ class SwitchButton extends Widget
     
     public function init()
     {
+        // Always use moon icon
         $this->icon = Icon::get('moon-o');
     }
     

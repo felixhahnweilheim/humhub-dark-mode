@@ -5,23 +5,33 @@ namespace humhub\modules\darkMode\models;
 use Yii;
 
 /**
- * UserSetting is the model for the user dark mode setting
+ * UserSetting is the model for the theme preference of guests (via cookie) and logged in users
  */
 class UserSetting extends \yii\base\Model
 {
+    const SCENARIO_GUEST = 'guest';
+    const SCENARIO_MEMBER = 'member';
+    
     const OPTION_DEFAULT = 0;
     const OPTION_LIGHT = 1;
     const OPTION_DARK = 2;
     
     public $darkMode = 0;
+	
+	public $scenario;
     
     public function init()
     {
         parent::init();
-
-        $settings = Yii::$app->getModule('dark-mode')->settings->user();
-
-        $this->darkMode = $settings->get('darkMode', '0');
+        
+        // get setting
+        if ($this->scenario == self::SCENARIO_GUEST) {
+            $cookies = Yii::$app->request->cookies;
+            $this->darkMode = $cookies->getValue('theme', '0');
+        } else {
+            $settings = Yii::$app->getModule('dark-mode')->settings->user();
+            $this->darkMode = $settings->get('darkMode', '0');
+        }
     }
     
     public function rules()
@@ -58,6 +68,21 @@ class UserSetting extends \yii\base\Model
             return false;
         }
         
+        // Save cookie in any case
+        $cookies = Yii::$app->response->cookies;
+            
+        $cookies->add(new \yii\web\Cookie([
+            'name' => 'theme',
+            'value' => $this->darkMode,
+            'expire' => time()+60*60*24*365
+        ]));
+        
+        // Return for guests
+        if ($this->scenario == self::SCENARIO_GUEST) {
+            return true;
+        }
+        
+        // Save user setting
         $settings = Yii::$app->getModule('dark-mode')->settings->user();
         
         $settings->set('darkMode', $this->darkMode);

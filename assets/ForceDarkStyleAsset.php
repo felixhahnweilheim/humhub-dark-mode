@@ -6,6 +6,8 @@ use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 use yii\web\AssetBundle;
 
+/**ForceDarkStyleAsset adds the dark stylesheet, not regarding browser/system preferences
+ */
 class ForceDarkStyleAsset extends AssetBundle
 {
     public $publishOptions = [
@@ -18,6 +20,7 @@ class ForceDarkStyleAsset extends AssetBundle
     
     public function init()
     {
+        // Find theme selected by module settings
         $themeName = Yii::$app->getModule('dark-mode')->settings->get('theme', 'DarkHumHub');
         $theme = ThemeHelper::getThemeByName($themeName);
         
