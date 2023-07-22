@@ -17,15 +17,16 @@ class DarkStyle extends Widget
     public function run()
     {
         $view = $this->getView();
-        $user = Yii::$app->user;
         
-        if ($user->isGuest) {
-            DarkStyleAsset::register($view);
-            return;
+        if (Yii::$app->user->isGuest)
+            // Guest: Get mode by cookie
+            $mode = Yii::$app->request->cookies->getValue('theme', '0');
+        } else {
+            // Logged in: Get mode by user setting
+            $mode = Yii::$app->getModule('dark-mode')->settings->user()->get('darkMode', '0');
         }
         
-        $mode = Yii::$app->getModule('dark-mode')->settings->user()->get('darkMode', '0');
-        
+        // Register the right asset
         if ($mode == UserSetting::OPTION_DEFAULT) {
             DarkStyleAsset::register($view);
         } elseif ($mode == UserSetting::OPTION_DARK) {

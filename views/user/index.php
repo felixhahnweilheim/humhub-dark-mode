@@ -17,5 +17,5 @@ use humhub\widgets\ModalDialog;
     <?= ModalButton::cancel() ?>
     <?= ModalButton::submitModal() ?>
 </div>
-<?php ActiveForm::end();?>
+<?php ActiveForm::end(); ?>
 <?php ModalDialog::end(); ?>

@@ -1,9 +1,10 @@
 Changelog
 =========
 ## 1.0.0-beta2 (TBA)
-- Remove switch button (browser dark mode is used instead) - removes use of cookie and javascript
-- make dark theme selectable (configuration page added)
-- move stylesheet into new "DarkHumHub" theme
+- Additionally save setting as user setting to database (if logged in)
+- Add option "Follow system" as default
+- make dark theme selectable by administrators (configuration page added)
+- move stylesheet into new "DarkHumHub" theme (taken by default)
 - add CSS "!important" rules for external modules in default dark theme
 
 ## 1.0.0-beta1 (8/6/2023)

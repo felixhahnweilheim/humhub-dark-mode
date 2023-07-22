@@ -16,10 +16,6 @@ class Events
     public static function onNotificationAddonInit($event)
     {
         try {
-            if (Yii::$app->user->isGuest) {
-                return;
-            }
-
             $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
         } catch (\Throwable $e) {
             Yii::error($e);
