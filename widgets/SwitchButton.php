@@ -10,8 +10,6 @@ use humhub\modules\ui\icon\widgets\Icon;
  */
 class SwitchButton extends Widget
 {
-    public $mode = 'light';
-    
     public $icon = '';
     
     public function init()
