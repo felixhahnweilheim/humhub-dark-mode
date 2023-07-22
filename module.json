@@ -7,10 +7,10 @@
         "minVersion": "1.14"
     },
     "keywords": [
-        "dark mode", "dark"
+        "dark mode", "dark", "theme"
     ],
     "screenshots": [
-        "resources/Screenshot_1.png"
+        "resources/Screenshot_1.png", "resources/Screenshot_2.png"
     ],
     "homepage": "https://github.com/felixhahnweilheim/humhub-dark-mode",
     "authors": [
