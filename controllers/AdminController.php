@@ -5,7 +5,7 @@ namespace humhub\modules\darkMode\controllers;
 use humhub\modules\darkMode\models\Config;
 use Yii;
 
-class ConfigController extends \humhub\modules\admin\components\Controller
+class AdminController extends \humhub\modules\admin\components\Controller
 {
     public function actionIndex()
     {
