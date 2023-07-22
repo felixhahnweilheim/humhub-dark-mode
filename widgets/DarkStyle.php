@@ -18,7 +18,7 @@ class DarkStyle extends Widget
     {
         $view = $this->getView();
         
-        if (Yii::$app->user->isGuest)
+        if (Yii::$app->user->isGuest) {
             // Guest: Get mode by cookie
             $mode = Yii::$app->request->cookies->getValue('theme', '0');
         } else {
