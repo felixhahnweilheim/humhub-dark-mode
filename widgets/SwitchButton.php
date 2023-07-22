@@ -14,7 +14,7 @@ class SwitchButton extends Widget
     
     public function init()
     {
-        $this->icon= Icon::get('moon-o');
+        $this->icon = Icon::get('moon-o');
     }
     
     public function run()
