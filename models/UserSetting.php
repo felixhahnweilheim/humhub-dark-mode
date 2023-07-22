@@ -31,6 +31,13 @@ class UserSetting extends \yii\base\Model
         ];
     }
     
+    public function attributeLabels()
+    {
+        return [
+            'darkMode' => Yii::t('DarkModeModule.base', 'Theme preferences')
+        ];
+    }
+    
     /**
      * Returns available options
      *
@@ -39,9 +46,9 @@ class UserSetting extends \yii\base\Model
     public function getOptions()
     {
         return [
-            static::OPTION_DEFAULT => Yii::t('DarkModeModule.base', 'Use Browser Mode'),
-            static::OPTION_LIGHT => Yii::t('DarkModeModule.base', 'Light Mode'),
-            static::OPTION_DARK => Yii::t('DarkModeModule.base', 'Dark Mode'),
+            static::OPTION_DEFAULT => Yii::t('DarkModeModule.base', 'Follow system (Default)'),
+            static::OPTION_LIGHT => Yii::t('DarkModeModule.base', 'Light'),
+            static::OPTION_DARK => Yii::t('DarkModeModule.base', 'Dark'),
         ];
     }
     
