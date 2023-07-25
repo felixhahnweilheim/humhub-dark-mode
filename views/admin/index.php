@@ -15,10 +15,7 @@ use yii\helpers\Html;
 
             <?= $form->field($model, 'theme')->dropdownList($model->getThemes());
             ?>
-            
-            <?= Yii::t('DarkModeModule.base', 'Choose how {appname} looks to you.', ['appname' => Yii::$app->name]) . '<br/><br/>' .
-                Yii::t('DarkModeModule.base', 'Select a single theme, or sync with your browser or system and automatically switch between day and night theme.')
-            ?>
+
         <div class="form-group">
             <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
         </div>
