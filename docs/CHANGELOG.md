@@ -1,6 +1,7 @@
 Changelog
 =========
 ## 1.0.0-beta2 (TBA)
+- [#7](https://github.com/felixhahnweilheim/humhub-dark-mode/pull/7) Replaced cookies with session and small fixes
 - Additionally save setting as user setting to database (if logged in)
 - Add option "Follow system" as default
 - make dark theme selectable by administrators (configuration page added)
