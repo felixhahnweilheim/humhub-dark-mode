@@ -4,9 +4,10 @@ Changelog
 - [#7](https://github.com/felixhahnweilheim/humhub-dark-mode/pull/7) Replaced cookies with session and small fixes
 - Additionally save setting as user setting to database (if logged in)
 - Add option "Follow system" as default
-- make dark theme selectable by administrators (configuration page added)
-- move stylesheet into new "DarkHumHub" theme (taken by default)
-- add CSS "!important" rules for external modules in default dark theme
+- Make dark theme selectable by administrators (configuration page added)
+- Move stylesheet into new "DarkHumHub" theme (taken by default)
+- Theme: add "!important" for external modules CSS
+- Theme: white text in primary buttons
 
 ## 1.0.0-beta1 (8/6/2023)
 - update documentation
