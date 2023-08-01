@@ -31,7 +31,7 @@ class Config extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'theme' => Yii::t('DarkModeModule.admin', 'Theme')
+            'theme' => Yii::t('DarkModeModule.admin', 'Dark Theme')
         ];
     }
     
