@@ -9,7 +9,6 @@ use yii\web\AssetBundle;
 /*
  * DarkStyleAsset is the default dark style, based on browser/system preference
  */
-
 class DarkStyleAsset extends AssetBundle
 {
     public $publishOptions = [
@@ -27,8 +26,6 @@ class DarkStyleAsset extends AssetBundle
     {
         // Find theme selected by module settings
         $config = new Config();
-        $theme = ThemeHelper::getThemeByName($config->theme);
-
-        $this->sourcePath = $theme->basePath;
+        $this->sourcePath = $config->getThemePath();
     }
 }
