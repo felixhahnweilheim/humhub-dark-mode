@@ -50,7 +50,8 @@ class Config extends \yii\base\Model
             $themes[$theme->name] = $theme->name;
         }
         
-        if (Yii::$app->hasModule('enterprise-theme') && isset(Yii::$app->modules['enterprise-theme'])) {
+        $enterprise = 'enterprise-theme';
+        if (Yii::$app->hasModule($enterprise) && isset(Yii::$app->modules[$enterprise])) {
             $themes['DarkEnterprise'] = 'DarkEnterprise';
         }
         
@@ -73,9 +74,9 @@ class Config extends \yii\base\Model
     public function getThemePath()
     {
 		if ($this->theme == 'DarkEnterprise') {
-			return '@dark-mode/resources/enterprise';
+			return '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'enterprise';
 		} else {
-            return = ThemeHelper::getThemeByName($this->theme)->basePath;
+            return ThemeHelper::getThemeByName($this->theme)->basePath;
 		}  
     }
 }
