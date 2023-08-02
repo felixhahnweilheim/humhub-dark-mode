@@ -49,7 +49,7 @@ class Events
     
     public function onAfterModuleEnabled(ModuleEvent $event) {
         // If module ID contains "theme" we assume it is a theme module
-        if(strpos($event->moduleId, 'theme')) {
+        if(strpos($event->moduleId, 'theme') !== false) {
             // Delete module setting to prevent design issues
             $settings = Yii::$app->getModule('dark-mode')->settings;
             $settings->delete('theme');
