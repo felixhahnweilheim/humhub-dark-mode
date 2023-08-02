@@ -1,5 +1,9 @@
 Changelog
 =========
+## TBA
+- Compatibility with theme modules, esp. Enterprise Theme
+- allow empty module setting & log error if asset cannot be registered
+
 ## 1.0.0-beta2 (25/7/2023)
 - [#7](https://github.com/felixhahnweilheim/humhub-dark-mode/pull/7) Replaced cookies with session and small fixes
 - Additionally save setting as user setting to database (if logged in)

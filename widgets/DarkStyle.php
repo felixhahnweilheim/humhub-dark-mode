@@ -27,7 +27,9 @@ class DarkStyle extends Widget
                 ForceDarkStyleAsset::register($view);
             }
         } catch (\Throwable $e) {
-            Yii::error('Asset for Dark Mode could not be registered. Please check the module configuration. You probably have to select a dark theme.');
+            Yii::error('Stylesheet for Dark Mode could not be loaded. Please check the module configuration! You probably have to select a dark theme. 
+                Full error:
+                ' . $e, 'dark-theme');
         }
 
         return '';
