@@ -2,6 +2,7 @@
 
 namespace humhub\modules\darkMode\models;
 
+use humhub\modules\darkMode\Module;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 
@@ -18,7 +19,14 @@ class Config extends \yii\base\Model
 
         $settings = Yii::$app->getModule('dark-mode')->settings;
 
-        $this->theme = $settings->get('theme', 'DarkHumHub');
+        $this->theme = $settings->get('theme');
+        
+        // If no setting was found, try to get it from known theme combinations - leave empty if no theme combination was found
+        if (empty($this->theme)) {
+            if (!empty(Module::getThemeCombinations()[Yii::$app->view->theme->name])) {
+                $this->theme = Module::getThemeCombinations()[Yii::$app->view->theme->name];
+            }
+        }
     }
 
     public function rules()

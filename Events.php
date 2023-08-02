@@ -39,6 +39,10 @@ class Events
             $settings = Yii::$app->getModule('dark-mode')->settings;
             $settings->set('theme', Module::getThemeCombinations()[$newTheme]);
             return;
+        } else {
+            // Delete module setting if no known theme was found to prevent design issues with non matching themes
+            $settings = Yii::$app->getModule('dark-mode')->settings;
+            $settings->delete('theme');
         }
     }
 }
