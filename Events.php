@@ -24,30 +24,8 @@ class Events
         }
     }
     
-    public static function onDesignSettingForm($event)
+    public static function onAfterModuleEnabled(ModuleEvent $event)
     {
-        $oldTheme = Yii::$app->view->theme->name;
-        $newTheme = $event->sender->theme;
-        
-        // Do nothing if theme has not changed
-        if ($oldTheme == $newTheme) {
-            return;
-        }
-        
-        // Update Dark Theme for known Themes
-        if (!empty(Module::getThemeCombinations()[$newTheme])) {
-            
-            $settings = Yii::$app->getModule('dark-mode')->settings;
-            $settings->set('theme', Module::getThemeCombinations()[$newTheme]);
-            return;
-        } else {
-            // Delete module setting if no known theme was found to prevent design issues with non matching themes
-            $settings = Yii::$app->getModule('dark-mode')->settings;
-            $settings->delete('theme');
-        }
-    }
-    
-    public static function onAfterModuleEnabled(ModuleEvent $event) {
         // If module ID contains "theme" we assume it is a theme module
         if(strpos($event->moduleId, 'theme') !== false) {
             // Delete module setting to prevent design issues
@@ -56,12 +34,13 @@ class Events
         }
     }
 
-    public static function onBeforeModuleDisabled(ModuleEvent $event) {
+    public static function onBeforeModuleDisabled(ModuleEvent $event)
+    {
         $settings = Yii::$app->getModule('dark-mode')->settings;
         $darkTheme = $settings->get('theme');
         
         // If Enterprise was disabled, remove "DarkEnterprise" setting
-        if ($event-moduleId == 'enterprise-theme' && $darkTheme == 'DarkEnterprise') {
+        if ($event->moduleId == 'enterprise-theme' && $darkTheme == 'DarkEnterprise') {
             $settings->delete('theme');
         }
     }    

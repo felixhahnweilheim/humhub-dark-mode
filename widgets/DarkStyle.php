@@ -6,6 +6,7 @@ use humhub\components\Widget;
 use humhub\modules\darkMode\assets\DarkStyleAsset;
 use humhub\modules\darkMode\assets\ForceDarkStyleAsset;
 use humhub\modules\darkMode\models\UserSetting;
+use Yii;
 
 /**
  * Adds the dark style asset
