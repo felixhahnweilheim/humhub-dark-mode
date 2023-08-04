@@ -3,11 +3,11 @@
 namespace humhub\modules\darkMode\assets;
 
 use humhub\modules\darkMode\models\Config;
-use humhub\modules\ui\view\helpers\ThemeHelper;
 use yii\web\AssetBundle;
 
 /*
  * DarkStyleAsset is the default dark style, based on browser/system preference
+ * It should only be registered within try and catch because it throws an error when no theme is found
  */
 class DarkStyleAsset extends AssetBundle
 {
@@ -15,7 +15,7 @@ class DarkStyleAsset extends AssetBundle
         'forceCopy' => false
     ];
 
-    public $sourcePath = '@dark-mode/themes/DarkHumHub';
+    public $sourcePath;
 
     // Tell browser to use stylesheet only when in dark mode
     public $css = [
@@ -24,6 +24,7 @@ class DarkStyleAsset extends AssetBundle
 
     public function init()
     {
+        parent::init;
         // Find theme selected by module settings
         $config = new Config();
         $this->sourcePath = $config->getThemePath();
