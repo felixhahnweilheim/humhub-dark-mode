@@ -2,28 +2,13 @@
 
 namespace humhub\modules\darkMode\assets;
 
-use humhub\modules\darkMode\models\Config;
-use humhub\modules\ui\view\helpers\ThemeHelper;
-use yii\web\AssetBundle;
+use humhub\modules\darkMode\assets\DarkStyleAsset;
 
-/**ForceDarkStyleAsset adds the dark stylesheet, not regarding browser/system preferences
+/*
+ * ForceDarkStyleAsset adds the dark stylesheet, not regarding browser/system preferences
+ * It should only be registered within try and catch because it throws an error when no theme is found
  */
-class ForceDarkStyleAsset extends AssetBundle
+class ForceDarkStyleAsset extends DarkStyleAsset
 {
-    public $publishOptions = [
-        'forceCopy' => false
-    ];
-
-    public $sourcePath = '@dark-mode/themes/DarkHumHub';
-
     public $css = ['css/theme.css'];
-
-    public function init()
-    {
-        // Find theme selected by module settings
-        $config = new Config();
-        $theme = ThemeHelper::getThemeByName($config->theme);
-
-        $this->sourcePath = $theme->basePath;
-    }
 }

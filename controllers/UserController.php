@@ -2,12 +2,11 @@
 
 namespace humhub\modules\darkMode\controllers;
 
-use humhub\components\Controller;
 use humhub\modules\darkMode\models\UserSetting;
 use humhub\widgets\ModalClose;
 use Yii;
 
-class UserController extends Controller
+class UserController extends  \humhub\components\Controller
 {
     public function actionIndex()
     {
@@ -15,7 +14,7 @@ class UserController extends Controller
 
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
 
-            // Close modal and reload page to make apply asset changes
+            // Close modal and reload page to make apply asset changes (this way the "Saved" message is not shown)
             return ModalClose::widget(['saved' => true]) .
                 ' <script ' . \humhub\libs\Html::nonce() . '>$(function () { location.reload() }); </script>';
         }

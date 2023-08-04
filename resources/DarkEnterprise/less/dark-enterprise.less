@@ -1,0 +1,32 @@
+// Additional LESS for DarkEnterprise
+@sidebar-color: #2d3340;
+@sidebar-color-second: #383f4f;
+
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: @background3;
+}
+#sidebar-wrapper, #sidebar-wrapper #space-menu-search {
+    background: @sidebar-color;
+}
+#sidebar-wrapper #space-menu-search {
+    border-color: @sidebar-color-second;
+}
+#sidebar-wrapper ::placeholder {
+    color: #424b5e !important;
+}
+#sidebar-wrapper a:hover {
+    background-color: @sidebar-color-second;
+}
+.nav-space-chooser > li > a, .space-entries li > a {
+    border-left-color: @sidebar-color;
+}
+.space-nav {
+    background-color: @background-color-secondary;
+    border-color: @background3;
+}
+.space-nav .nav > li > a.active, .space-nav .nav > li > a:active, .space-nav .nav > li > a:focus, .space-nav .nav > li > a:hover {
+    background-color: @background4;
+}
+.space-nav .nav > li > a {
+    border-bottom-color: @background4;
+}

@@ -2,11 +2,12 @@
 
 namespace humhub\modules\darkMode\models;
 
+use humhub\modules\darkMode\Module;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 
 /**
- * ConfigureForm defines the configurable fields.
+ * Module Configuration model
  */
 class Config extends \yii\base\Model
 {
@@ -18,7 +19,14 @@ class Config extends \yii\base\Model
 
         $settings = Yii::$app->getModule('dark-mode')->settings;
 
-        $this->theme = $settings->get('theme', 'DarkHumHub');
+        $this->theme = $settings->get('theme');
+        
+        // If no setting was found, try to get it from known theme combinations - leave empty if no theme combination was found
+        if (empty($this->theme)) {
+            if (!empty(Module::getThemeCombinations()[Yii::$app->view->theme->name])) {
+                $this->theme = Module::getThemeCombinations()[Yii::$app->view->theme->name];
+            }
+        }
     }
 
     public function rules()
@@ -31,7 +39,7 @@ class Config extends \yii\base\Model
     public function attributeLabels()
     {
         return [
-            'theme' => Yii::t('DarkModeModule.admin', 'Theme')
+            'theme' => Yii::t('DarkModeModule.admin', 'Dark Theme')
         ];
     }
     
@@ -50,6 +58,11 @@ class Config extends \yii\base\Model
             $themes[$theme->name] = $theme->name;
         }
         
+        $enterprise = 'enterprise-theme';
+        if (Yii::$app->hasModule($enterprise) && isset(Yii::$app->modules[$enterprise])) {
+            $themes['DarkEnterprise'] = 'DarkEnterprise';
+        }
+        
         return $themes;
     }
     
@@ -64,5 +77,14 @@ class Config extends \yii\base\Model
         $settings->set('theme', $this->theme);
 
         return true;
+    }
+    
+    public function getThemePath()
+    {
+		if ($this->theme == 'DarkEnterprise') {
+			return '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkEnterprise';
+		} else {
+            return ThemeHelper::getThemeByName($this->theme)->basePath;
+		}  
     }
 }
