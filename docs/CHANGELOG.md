@@ -1,5 +1,8 @@
 Changelog
 =========
+## TBA
+- Fix Prosemirror editor menu background color
+
 ## 1.0.0-beta3 (4/8/2023)
 - Enh: Compatibility with Enterprise Theme
 - allow empty module setting & log error if asset cannot be registered
