@@ -5,6 +5,7 @@ Changelog
 - allow empty module setting & log error if asset cannot be registered
 - HumHub minVersion: 1.15
 - DarkHumHub: CSS compiled with HumHubb 1.15
+- DarkHumHub: updated color text-color-soft3
 
 ## 1.0.0-beta2 (25/7/2023)
 - [#7](https://github.com/felixhahnweilheim/humhub-dark-mode/pull/7) Replaced cookies with session and small fixes
