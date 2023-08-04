@@ -22,7 +22,7 @@ class Module extends \humhub\components\Module {
         return Url::to(['/dark-mode/admin']);
     }
     
-    // Return known Theme Combinations
+    // Return known Theme Combinations as array (LightTheme => DarkTheme)
     public static function getThemeCombinations()
     {
         $themeCombinations = ['HumHub' => 'DarkHumHub', 'enterprise' => 'DarkEnterprise'];

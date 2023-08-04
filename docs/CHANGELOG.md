@@ -1,7 +1,7 @@
 Changelog
 =========
-## TBA
-- Compatibility with theme modules, esp. Enterprise Theme
+## 1.0.0-beta3 (4/8/2023)
+- Enh: Compatibility with Enterprise Theme
 - allow empty module setting & log error if asset cannot be registered
 - HumHub minVersion: 1.15
 - DarkHumHub: CSS compiled with HumHubb 1.15

@@ -11,7 +11,7 @@ use yii\helpers\Url;
  */
 class SwitchButton extends Widget
 {
-    public $icon = '';
+    public $icon;
     
     public $url;
     

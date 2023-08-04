@@ -3,7 +3,6 @@
 namespace humhub\modules\darkMode;
 
 use humhub\modules\darkMode\widgets\DarkStyle;
-use humhub\modules\darkMode\Module;
 use humhub\modules\darkMode\widgets\SwitchButton;
 use humhub\components\ModuleEvent;
 use Yii;
