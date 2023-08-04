@@ -24,7 +24,7 @@ class DarkStyleAsset extends AssetBundle
 
     public function init()
     {
-        parent::init;
+        parent::init();
         // Find theme selected by module settings
         $config = new Config();
         $this->sourcePath = $config->getThemePath();
