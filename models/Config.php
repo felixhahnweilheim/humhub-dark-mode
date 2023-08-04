@@ -7,7 +7,7 @@ use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 
 /**
- * ConfigureForm defines the configurable fields.
+ * Module Configuration model
  */
 class Config extends \yii\base\Model
 {
@@ -82,7 +82,7 @@ class Config extends \yii\base\Model
     public function getThemePath()
     {
 		if ($this->theme == 'DarkEnterprise') {
-			return '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'enterprise';
+			return '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkEnterprise';
 		} else {
             return ThemeHelper::getThemeByName($this->theme)->basePath;
 		}  

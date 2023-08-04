@@ -1,6 +1,5 @@
 <?php
 
-use humhub\modules\darkMode\assets\DarkStyleAsset;
 use yii\helpers\Url;
 
 ?>
