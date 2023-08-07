@@ -1,13 +1,12 @@
 <?php
 
-use humhub\modules\darkMode\Module;
 use humhub\modules\darkMode\models\Config;
 use humhub\modules\ui\form\widgets\ActiveForm;
 use yii\helpers\Html;
 
-$baseTheme = Yii::$app->view->theme->name;
-if (!empty(Module::getThemeCombinations()[$baseTheme])) {
-    $recommandation = Yii::t('DarkModeModule.admin', 'Recommended dark theme: ') . Module::getThemeCombinations()[$baseTheme];
+$recommendedTheme = Config::getRecommendedTheme();
+if (!empty($recommendedTheme) {
+    $recommandation = Yii::t('DarkModeModule.admin', 'Recommended dark theme: ') . $recommendedTheme;
 } else {
     $recommandation = Yii::t('DarkModeModule.admin', 'Unfortunately we don\'t have a recommended dark theme for your theme.');
 }
