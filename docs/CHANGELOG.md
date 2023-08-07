@@ -1,7 +1,9 @@
 Changelog
 =========
 ## TBA
-- Fix Prosemirror editor menu background color
+- Enh: only show dark themes in configuration page
+- Enh: support themes with dark.css
+- Themes: Fix Prosemirror editor menu background color
 
 ## 1.0.0-beta3 (4/8/2023)
 - Enh: Compatibility with Enterprise Theme
