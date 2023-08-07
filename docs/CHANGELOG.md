@@ -2,6 +2,7 @@ Changelog
 =========
 ## TBA
 - Enh: only show dark themes in configuration page
+- Enh: make options in admin page clearer (and remove recommandation)
 - Enh: support themes with dark.css
 - Themes: Fix Prosemirror editor menu background color
 
