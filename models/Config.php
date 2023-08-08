@@ -12,10 +12,7 @@ class Config extends \yii\base\Model
 {
     public $theme;
     
-    // not configurable
-    public $hasDarkCSS = false;
-    
-    const DARK_CSS_SUFFIX = '-dark.css';
+    const DARK_CSS_SUFFIX = ' (dark)';
     
     public function init()
     {
@@ -28,10 +25,6 @@ class Config extends \yii\base\Model
         // If no setting was found, try to get recommended theme - leave empty if no theme combination was found
         if (empty($this->theme)) {
             $this->theme = self::getRecommendedTheme();
-        }
-        
-        if (strpos($this->theme, self::DARK_CSS_SUFFIX) !== false) {
-            $this->hasDarkCSS = true;
         }
     }
 
@@ -58,13 +51,12 @@ class Config extends \yii\base\Model
     
     public function getThemes()
     {
-        $darkMessage = Yii::t('DarkModeModule.admin', 'dark');
         $themes = [];
         
         foreach (ThemeHelper::getThemes() as $theme) {
             // Themes with a dark.css
             if (file_exists($theme->basePath . DIRECTORY_SEPARATOR . 'css' . DIRECTORY_SEPARATOR . 'dark.css')) {
-                $themes[$theme->name . self::DARK_CSS_SUFFIX] = $theme->name . ' (' . $darkMessage . ')';
+                $themes[$theme->name . self::DARK_CSS_SUFFIX] = $theme->name . self::DARK_CSS_SUFFIX;
             // Themes containing "dark" in their name
             } elseif (stripos($theme->name, 'dark') !== false) {
                 $themes[$theme->name] = $theme->name;
@@ -72,12 +64,12 @@ class Config extends \yii\base\Model
         }
         
         // Rename "DarkHumHub" to "HumHub (dark)"
-        $themes['DarkHumHub'] = 'HumHub (' . $darkMessage . ')';
+        $themes['DarkHumHub'] = 'HumHub' . self::DARK_CSS_SUFFIX;
         
         // Add "enterprise (dark)" if module enabled
         $enterprise = 'enterprise-theme';
         if (Yii::$app->hasModule($enterprise) && isset(Yii::$app->modules[$enterprise])) {
-            $themes['DarkEnterprise'] = 'enterprise (' . $darkMessage . ')';
+            $themes['DarkEnterprise'] = 'enterprise' . self::DARK_CSS_SUFFIX;
         }
         
         return $themes;
@@ -96,16 +88,20 @@ class Config extends \yii\base\Model
         return true;
     }
     
-    public function getThemePath()
+    public function getThemeInfos()
     {
+        $info['fileName'] = 'theme.css';
+        
         if ($this->theme == 'DarkEnterprise') {
-            return '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkEnterprise';
+            $info['path'] = '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkEnterprise' . DIRECTORY_SEPARATOR . 'css';
         } else {
-            if ($this->hasDarkCSS) {
+            if (strpos($this->theme, self::DARK_CSS_SUFFIX) !== false) {
                 $this->theme = str_replace(self::DARK_CSS_SUFFIX, '', $this->theme);
+                $info['fileName'] = 'dark.css';
             }
-            return ThemeHelper::getThemeByName($this->theme)->basePath;
-        }  
+            $info['path'] = ThemeHelper::getThemeByName($this->theme)->basePath . DIRECTORY_SEPARATOR . 'css';
+        }
+        return $info;
     }
     
     // Return recommended theme

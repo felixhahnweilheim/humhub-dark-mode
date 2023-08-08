@@ -14,13 +14,13 @@ class DarkStyleAsset extends AssetBundle
     public $publishOptions = [
         'forceCopy' => false
     ];
-
+    
     public $sourcePath;
-
+    
+    public $css;
+    
     // Tell browser to use stylesheet only when in dark mode
-    public $css = [
-        ['css/theme.css', 'media' => 'screen and (prefers-color-scheme: dark)'],
-    ];
+    public $cssOptions = ['media' => 'screen and (prefers-color-scheme: dark)'];
 
     public function init()
     {
@@ -28,11 +28,9 @@ class DarkStyleAsset extends AssetBundle
         
         // Find theme selected by module settings
         $config = new Config();
-        $this->sourcePath = $config->getThemePath();
         
-        // dark.css instead of theme.css
-        if ($config->hasDarkCSS) {
-            $this->css[0] = 'css/dark.css';
-        }
+        $themeData = $config->getThemeInfos();
+        $this->sourcePath = $themeData['path'];
+        $this->css = [$themeData['fileName']];
     }
 }
