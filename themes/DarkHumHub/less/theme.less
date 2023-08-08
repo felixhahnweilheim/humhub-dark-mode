@@ -70,6 +70,9 @@
     .btn-enter:hover {
         background-color: lighten(@background-color-page, 30%);
     }
+    .caret {
+        border-top-color: @text-color-highlight;
+    }
 }
 #topbar-second {
     background-color: @background-color-secondary;
@@ -314,6 +317,17 @@ input[type="checkbox"], input[type="radio"] {
 // Alert info (e.g. Admin -> Information)
 .alert-info {
     background-color: #323a3f;
+}
+
+// UI Icons (e.g. date picker arrows)
+.ui-icon, .ui-widget-content .ui-icon, .ui-widget-header .ui-icon,  {
+    filter: invert(100%);
+}
+
+// Bootstrap Timepicker
+.bootstrap-timepicker-widget table td a:hover {
+    background-color: @background-color-secondary;
+    border-color: @background-color-secondary;
 }
 
 // -------------------------------------
