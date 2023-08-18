@@ -20,6 +20,8 @@ You can do so by using the [Theme Builder](https://marketplace.humhub.com/module
 
 **Note:** The name of the theme has to contain the word "dark".
 
+Alternatively, you can add a `dark.css` to an existing theme next to the `theme.css` file.
+
 ## Credits
 
 [Felix Hahn](https://github.com/felixhahnweilheim) (developer)
