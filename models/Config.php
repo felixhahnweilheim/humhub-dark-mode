@@ -14,6 +14,8 @@ class Config extends \yii\base\Model
     
     const DARK_CSS_SUFFIX = ' (dark)';
     
+    const FALLBACK = 'DarkHumHub';
+    
     public function init()
     {
         parent::init();
@@ -25,6 +27,9 @@ class Config extends \yii\base\Model
         // If no setting was found, try to get recommended theme - leave empty if no theme combination was found
         if (empty($this->theme)) {
             $this->theme = self::getRecommendedTheme();
+        }
+        if (empty($this->theme)) {
+            $this->theme = self::FALLBACK;
         }
     }
 
