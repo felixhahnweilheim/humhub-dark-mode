@@ -20,7 +20,7 @@ css-color-extractor css/theme.css css/theme.css --format=css
 
 cp css/theme.css css/temporary.less
 
-lessc ../DarkHumHub/less/build2.less css/theme.css --clean-css="--s1 --advanced" --source-map=../css/theme.css.map
+lessc less/build2.less css/theme.css --clean-css="--s1 --advanced" --source-map=../css/theme.css.map
 rm css/temporary.less
 
 cd ../../
