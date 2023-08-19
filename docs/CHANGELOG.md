@@ -6,7 +6,7 @@ Changelog
 - Enh: support themes with dark.css
 - Themes: Fix Prosemirror editor menu background color
 - Themes: move DarkHumHub to resources
-- Themes: reduce CSS file css (only color rules)
+- Themes: reduce CSS file size (only color rules)
 
 ## 1.0.0-beta3 (4/8/2023)
 - Enh: Compatibility with Enterprise Theme
