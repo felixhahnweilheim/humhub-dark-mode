@@ -10,11 +10,10 @@ use Yii;
  */
 class Config extends \yii\base\Model
 {
-    public $theme;
-    
     const DARK_CSS_SUFFIX = ' (dark)';
-    
     const FALLBACK = 'DarkHumHub';
+    
+    public $theme;
     
     public function init()
     {
@@ -24,12 +23,12 @@ class Config extends \yii\base\Model
 
         $this->theme = $settings->get('theme');
         
-        // If no setting was found, try to get recommended theme - leave empty if no theme combination was found
+        // If no setting was found, get recommended theme or fallback (DarkHumHub) 
         if (empty($this->theme)) {
             $this->theme = self::getRecommendedTheme();
-        }
-        if (empty($this->theme)) {
-            $this->theme = self::FALLBACK;
+            if (empty($this->theme)) {
+                $this->theme = self::FALLBACK;
+            }
         }
     }
 
@@ -68,7 +67,7 @@ class Config extends \yii\base\Model
             }
         }
         
-        // Rename "DarkHumHub" to "HumHub (dark)"
+        // Add "HumHub (dark)"
         $themes['DarkHumHub'] = 'HumHub' . self::DARK_CSS_SUFFIX;
         
         // Add "enterprise (dark)" if module enabled
@@ -87,12 +86,15 @@ class Config extends \yii\base\Model
         }
 
         $settings = Yii::$app->getModule('dark-mode')->settings;
-        
         $settings->set('theme', $this->theme);
 
         return true;
     }
     
+    /*
+     * returns array path and file name of stylesheet
+     * used for the assets
+     */
     public function getThemeInfos()
     {
         $info['fileName'] = 'theme.css';
@@ -102,6 +104,7 @@ class Config extends \yii\base\Model
         } elseif ($this->theme == 'DarkHumHub') {
             $info['path'] = '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkHumHub' . DIRECTORY_SEPARATOR . 'css';
         } else {
+            // Themes with dark.css
             if (strpos($this->theme, self::DARK_CSS_SUFFIX) !== false) {
                 $this->theme = str_replace(self::DARK_CSS_SUFFIX, '', $this->theme);
                 $info['fileName'] = 'dark.css';
@@ -111,7 +114,7 @@ class Config extends \yii\base\Model
         return $info;
     }
     
-    // Return recommended theme
+    // Try to return recommended theme
     public function getRecommendedTheme()
     {
         $baseTheme = Yii::$app->view->theme->name;

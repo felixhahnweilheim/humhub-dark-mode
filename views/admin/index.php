@@ -1,6 +1,5 @@
 <?php
 
-use humhub\modules\darkMode\models\Config;
 use humhub\modules\ui\form\widgets\ActiveForm;
 use yii\helpers\Html;
 
@@ -9,7 +8,7 @@ $baseTheme = Yii::$app->view->theme->name;
 
 <div class="panel panel-default">
     <div class="panel-heading">
-        <?= \Yii::t('DarkModeModule.base', '<strong>Dark Mode</strong> module configuration') ?>
+        <?= Yii::t('DarkModeModule.admin', '<strong>Dark Mode</strong> module configuration') ?>
     </div>
     <div class="panel-body">
         <div class="alert alert-info">
