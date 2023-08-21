@@ -6,4 +6,5 @@ return [
     'Dark Mode' => 'Dunkler Modus',
     'Dark Theme' => 'Dunkles Theme',
     'The stylesheet of the selected theme will be used for the dark mode.' => 'Das Stylesheet des ausgewählten Themes wird für den dunklen Modus verwendet.',
+    '<strong>Dark Mode</strong> module configuration' => '',
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
+    '<strong>Dark Mode</strong> module configuration' => '',
     'Adds a Dark Mode to HumHub' => '',
     'Current base theme: ' => '',
     'Dark Mode' => '',
