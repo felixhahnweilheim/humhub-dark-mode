@@ -1,7 +1,12 @@
 Changelog
 =========
-## TBA
-- Fix Prosemirror editor menu background color
+## 1.0.0-beta4 (TBA)
+- Enh: only show dark themes in configuration page
+- Enh: make options in admin page clearer (and remove recommandation)
+- Enh: support themes with dark.css
+- Themes: move DarkHumHub to resources
+- Themes: reduce CSS file size (only color rules)
+- Themes: small color updates (borders, Prosemirror editor, form controls, ...)
 
 ## 1.0.0-beta3 (4/8/2023)
 - Enh: Compatibility with Enterprise Theme
@@ -27,8 +32,8 @@ Changelog
 - Enh: documentation
 
 ## 0.2.0 (6/6/2023)
-- Enh: black top bar
-- Enh: module compatibility (https://github.com/felixhahnweilheim/humhub-dark-mode/issues/1)
+- Theme: black top bar
+- Theme: module compatibility (https://github.com/felixhahnweilheim/humhub-dark-mode/issues/1)
 
 ## 0.1.0 (30/5/2023)
 - first version

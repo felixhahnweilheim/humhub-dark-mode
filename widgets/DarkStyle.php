@@ -29,7 +29,7 @@ class DarkStyle extends Widget
         } catch (\Throwable $e) {
             Yii::error('Stylesheet for Dark Mode could not be loaded. Please check the module configuration! You probably have to select a dark theme. 
                 Full error:
-                ' . $e, 'dark-theme');
+                ' . $e, 'dark-mode');
         }
 
         return '';

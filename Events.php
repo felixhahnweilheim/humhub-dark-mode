@@ -19,17 +19,16 @@ class Events
         try {
             $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
         } catch (\Throwable $e) {
-            Yii::error($e);
+            Yii::error($e, 'dark-mode');
         }
     }
     
     public static function onAfterModuleEnabled(ModuleEvent $event)
     {
-        // If module ID contains "theme" we assume it is a theme module
-        if(strpos($event->moduleId, 'theme') !== false) {
-            // Delete module setting to prevent design issues
+        if ($event->moduleId == 'enterprise-theme' || $event->moduleId == 'clean-theme') {
             $settings = Yii::$app->getModule('dark-mode')->settings;
             $settings->delete('theme');
+            Yii::warning('Note: Your dark theme setting was removed because you activated "' . $event->moduleId . '".', 'dark-mode');
         }
     }
 
@@ -41,6 +40,7 @@ class Events
         // If Enterprise was disabled, remove "DarkEnterprise" setting
         if ($event->moduleId == 'enterprise-theme' && $darkTheme == 'DarkEnterprise') {
             $settings->delete('theme');
+            Yii::warning('Note: Your dark theme setting was removed. "enterprise (dark)" is no longer available because you disabled the Enterprise Theme Module.', 'dark-mode');
         }
     }    
 }
