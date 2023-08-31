@@ -1,6 +1,6 @@
 Changelog
 =========
-## 1.0.0-beta4 (TBA)
+## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
 - Enh: make options in admin page clearer (and remove recommandation)
 - Enh: support themes with dark.css
