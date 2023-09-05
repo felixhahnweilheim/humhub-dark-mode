@@ -4,6 +4,7 @@ namespace humhub\modules\darkMode\assets;
 
 use humhub\modules\darkMode\models\Config;
 use yii\web\AssetBundle;
+use Yii;
 
 /*
  * DarkStyleAsset is the default dark style, based on browser/system preference
@@ -19,6 +20,9 @@ class DarkStyleAsset extends AssetBundle
     
     public $css;
     
+    const PATH_CACHE = "darkMode_path";
+    const FILENAME_CACHE = "darkMode_fileName";
+    
     // Tell browser to use stylesheet only when in dark mode
     public $cssOptions = ['media' => 'screen and (prefers-color-scheme: dark)'];
 
@@ -26,11 +30,22 @@ class DarkStyleAsset extends AssetBundle
     {
         parent::init();
         
-        // Find theme selected by module settings
-        $config = new Config();
+        // Get Settings from Cache
+        $this->sourcePath = Yii::$app->cache->get(self::PATH_CACHE);
+        $this->css = [Yii::$app->cache->get(self::FILENAME_CACHE)];
         
-        $themeData = $config->getThemeInfos();
-        $this->sourcePath = $themeData['path'];
-        $this->css = [$themeData['fileName']];
+        if (empty($this->sourcePath) || empty($this->css)) {
+        
+            // Find theme selected by module settings
+            $config = new Config();
+        
+            $themeData = $config->getThemeInfos();
+            $this->sourcePath = $themeData['path'];
+            $this->css = [$themeData['fileName']];
+            
+            // Set cache
+            Yii::$app->cache->set(self::PATH_CACHE, $themeData['path']);
+            Yii::$app->cache->set(self::FILENAME_CACHE, $themeData['fileName']);
+        }
     }
 }
