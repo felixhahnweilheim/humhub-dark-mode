@@ -1,5 +1,9 @@
 Changelog
 =========
+## TBA
+- Enh: clear theme setting when base theme is changed via UI
+- Enh: cache theme setting
+
 ## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
 - Enh: make options in admin page clearer (and remove recommandation)
