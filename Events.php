@@ -4,6 +4,7 @@ namespace humhub\modules\darkMode;
 
 use humhub\modules\darkMode\widgets\DarkStyle;
 use humhub\modules\darkMode\widgets\SwitchButton;
+use humhub\modules\darkMode\models\Config;
 use humhub\components\ModuleEvent;
 use Yii;
 
@@ -20,6 +21,20 @@ class Events
             $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
         } catch (\Throwable $e) {
             Yii::error($e, 'dark-mode');
+        }
+    }
+    
+    public static function onDesignSettingForm($event)
+    {
+        $oldTheme = Yii::$app->view->theme->name;
+        $newTheme = $event->sender->theme;
+
+        // Clear dark theme setting if base theme has changed
+        if ($oldTheme !== $newTheme) {
+        
+            $config = new Config();
+            $config->theme = '';
+            $config->save();
         }
     }
     
