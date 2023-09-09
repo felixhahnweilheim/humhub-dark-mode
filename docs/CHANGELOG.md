@@ -1,8 +1,9 @@
 Changelog
 =========
 ## TBA
-- Enh: clear theme setting when base theme is changed via UI
-- Enh: cache theme setting
+- Enh: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/15 clear theme setting when base theme is changed via UI
+- Enh: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/15 cache theme setting
+- Themes: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/17 fix button color in Marketplace
 
 ## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
