@@ -20,7 +20,7 @@ You can decide between 3 options:
 In the module configuration, you can select a custom theme as dark theme.
 
 If you are using a custom theme, it is recommended to create a new dark theme based on it.
-You can do so by using the [Theme Builder](https://marketplace.humhub.com/module/theme-builder/description) or by following the [theming documentation](https://docs.humhub.org/docs/theme/).
+You can do so by using the [Theme Builder](https://marketplace.humhub.com/module/theme-builder/description) or by following the [theming documentation](https://docs.humhub.org/docs/theme/overview/).
 
 **Note:** The name of the theme has to contain the word "dark".
 
