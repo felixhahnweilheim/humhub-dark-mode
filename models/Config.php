@@ -2,6 +2,7 @@
 
 namespace humhub\modules\darkMode\models;
 
+use humhub\modules\darkMode\assets\DarkStyleAsset;
 use humhub\modules\ui\view\helpers\ThemeHelper;
 use Yii;
 
@@ -88,6 +89,9 @@ class Config extends \yii\base\Model
         $settings = Yii::$app->getModule('dark-mode')->settings;
         $settings->set('theme', $this->theme);
 
+        Yii::$app->cache->delete(DarkStyleAsset::PATH_CACHE);
+        Yii::$app->cache->delete(DarkStyleAsset::FILENAME_CACHE);
+        
         return true;
     }
     
