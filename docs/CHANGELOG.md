@@ -1,5 +1,8 @@
 Changelog
 =========
+## TBA
+- Themes: small color updates (left border in dropdown menus, Tasks Module: checklist hover)
+
 ## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
 - Enh: make options in admin page clearer (and remove recommandation)
