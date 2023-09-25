@@ -17,7 +17,7 @@ class Events
     
     public static function onNotificationAddonInit($event)
     {
-        if (Yii::$app->getModule('dark-mode')->settings->get('showButton')) {
+        if (Yii::$app->getModule('dark-mode')->settings->get('showButton', true)) {
             try {
                 $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
             } catch (\Throwable $e) {
