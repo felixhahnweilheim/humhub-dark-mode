@@ -8,6 +8,7 @@ use humhub\modules\darkMode\models\Config;
 use humhub\components\ModuleEvent;
 use humhub\modules\ui\menu\MenuLink;
 use Yii;
+use yii\helpers\Url;
 
 class Events
 {
