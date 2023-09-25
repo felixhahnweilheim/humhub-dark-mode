@@ -28,7 +28,7 @@ class Events
         }
     }
     
-    public static function onAccountMenuInit($event)
+    public static function onAccountSettingsMenuInit($event)
 	{
 	    $menu = $event->sender;
         
