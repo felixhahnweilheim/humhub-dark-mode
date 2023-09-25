@@ -121,19 +121,15 @@
 
 // List group item (e.g. admin sidebar, account sidebar)
 .list-group-item {
-    background-color: @background-color-secondary;
-    border-color: @background4 !important;
+    background-color: @background-color-main;
+    border-color: transparent !important;
 }
 a.list-group-item, button.list-group-item {
     color: @text-color-main;
 }
-// List group item (e.g. focus in account menu)
-a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+// Active/Hovered list group item (e.g. in account menu)
+a.list-group-item:focus, a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus, button.list-group-item:focus, button.list-group-item:hover {
     color: @text-color-highlight;
-    background-color: @background4;
-}
-// List group active item
-a.list-group-item:hover, a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
     background-color: @background4;
 }
 
