@@ -20,7 +20,7 @@ $baseTheme = Yii::$app->view->theme->name;
 
             <?= $form->field($model, 'theme')->dropdownList($model->getThemes()); ?>
             
-            <h3>Yii::t('DarkModeModule.admin', 'Button')</h3>
+            <h3><?= Yii::t('DarkModeModule.admin', 'Button') ?></h3>
             <?= $form->field($model, 'showButton')->checkbox(); ?>
 
         <div class="form-group">
