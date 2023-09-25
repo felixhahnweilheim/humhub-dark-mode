@@ -17,11 +17,32 @@ class Events
     
     public static function onNotificationAddonInit($event)
     {
-        try {
-            $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
-        } catch (\Throwable $e) {
-            Yii::error($e, 'dark-mode');
+        if (Yii::$app->getModule('dark-mode')->settings->get('showButton')) {
+            try {
+                $event->sender->addWidget(SwitchButton::class, [], ['sortOrder' => 200]);
+            } catch (\Throwable $e) {
+                Yii::error($e, 'dark-mode');
+            }
         }
+    }
+    
+    public static function onAccountMenuInit($event)
+	{
+	    $menu = $event->sender;
+        
+	    $menu->addEntry(new MenuLink([
+	        'icon' => 'fa-moon-o',
+	        'label' => Yii::t('DarkModeModule.base', 'Dark Mode'),
+	        'url' => '#',
+	        'htmlOptions' => [
+	            'data-action-click' => 'ui.modal.load',
+	            'data-action-click-url' => Url::toRoute('/dark-mode/user/'),
+	            'data-pjax-prevent' => ''
+	       ],
+	        'sortOrder' => 900,
+        ]));
+
+        return true;
     }
     
     public static function onDesignSettingForm($event)

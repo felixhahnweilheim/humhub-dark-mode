@@ -15,6 +15,7 @@ class Config extends \yii\base\Model
     const FALLBACK = 'DarkHumHub';
     
     public $theme;
+    public $showButton;
     
     public function init()
     {
@@ -23,6 +24,7 @@ class Config extends \yii\base\Model
         $settings = Yii::$app->getModule('dark-mode')->settings;
 
         $this->theme = $settings->get('theme');
+        $this->showButton = $settings->get('showButton', true);
         
         // If no setting was found, get recommended theme or fallback (DarkHumHub) 
         if (empty($this->theme)) {
@@ -37,20 +39,23 @@ class Config extends \yii\base\Model
     {
         return [
             ['theme', 'in', 'range' => array_keys($this->getThemes())],
+            ['showButton', 'boolean']
         ];
     }
     
     public function attributeLabels()
     {
         return [
-            'theme' => Yii::t('DarkModeModule.admin', 'Dark Theme')
+            'theme' => Yii::t('DarkModeModule.admin', 'Dark Theme'),
+            'showButton' => Yii::t('DarkModeModule.admin', 'Show Button in Top Bar')
         ];
     }
     
     public function attributeHints()
     {
         return [
-            'theme' => Yii::t('DarkModeModule.admin', 'The stylesheet of the selected theme will be used for the dark mode.')
+            'theme' => Yii::t('DarkModeModule.admin', 'The stylesheet of the selected theme will be used for the dark mode.'),
+            'showButton' => Yii::t('DarkModeModule.admin', 'Users can always set their theme preferences in their Account Settings.')
         ];
     }
     
@@ -88,6 +93,7 @@ class Config extends \yii\base\Model
 
         $settings = Yii::$app->getModule('dark-mode')->settings;
         $settings->set('theme', $this->theme);
+        $settings->set('showButton', $this->showButton);
 
         Yii::$app->cache->delete(DarkStyleAsset::PATH_CACHE);
         Yii::$app->cache->delete(DarkStyleAsset::FILENAME_CACHE);
