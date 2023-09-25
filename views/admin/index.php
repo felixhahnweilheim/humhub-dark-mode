@@ -19,6 +19,8 @@ $baseTheme = Yii::$app->view->theme->name;
         <?php $form = ActiveForm::begin(['id' => 'configure-form']);?>
 
             <?= $form->field($model, 'theme')->dropdownList($model->getThemes()); ?>
+            
+            <h3>Yii::t('DarkModeModule.admin', 'Button')</h3>
             <?= $form->field($model, 'showButton')->checkbox(); ?>
 
         <div class="form-group">
