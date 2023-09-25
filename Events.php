@@ -6,6 +6,7 @@ use humhub\modules\darkMode\widgets\DarkStyle;
 use humhub\modules\darkMode\widgets\SwitchButton;
 use humhub\modules\darkMode\models\Config;
 use humhub\components\ModuleEvent;
+use humhub\modules\ui\menu\MenuLink;
 use Yii;
 
 class Events
