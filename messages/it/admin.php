@@ -9,5 +9,5 @@ return [
     'The stylesheet of the selected theme will be used for the dark mode.' => 'Il foglio di stile del tema selezionato verrà utilizzato per la modalità scura.',
     'Button' => '',
     'Show Button in Top Bar' => '',
-    'Users can always set their theme preferences in their Account Settings.' => '',
+    'Users can always set their theme preferences in Account Settings > General.' => '',
 ];

@@ -6,5 +6,5 @@ return [
     'Follow system (Default)' => 'Segui sistema (Predefinito)',
     'Light' => 'Chiaro',
     'Theme preferences' => 'Preferenze tema',
-    'Dark Mode' => '',
+    'Dark Mode' => 'Modalità oscura',
 ];
