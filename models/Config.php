@@ -55,7 +55,7 @@ class Config extends \yii\base\Model
     {
         return [
             'theme' => Yii::t('DarkModeModule.admin', 'The stylesheet of the selected theme will be used for the dark mode.'),
-            'showButton' => Yii::t('DarkModeModule.admin', 'Users can always set their theme preferences in Account Settings > General.')
+            'showButton' => Yii::t('DarkModeModule.admin', 'Users can set their theme preferences also in Account Settings > General.')
         ];
     }
     

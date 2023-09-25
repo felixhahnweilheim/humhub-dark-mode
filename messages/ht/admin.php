@@ -9,5 +9,5 @@ return [
     'Dark Theme' => '',
     'Show Button in Top Bar' => '',
     'The stylesheet of the selected theme will be used for the dark mode.' => '',
-    'Users can always set their theme preferences in Account Settings > General.' => '',
+    'Users can set their theme preferences also in Account Settings > General.' => '',
 ];

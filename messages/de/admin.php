@@ -9,5 +9,5 @@ return [
     'Dark Theme' => 'Dunkles Theme',
     'Show Button in Top Bar' => 'Button in oberer Leiste anzeigen',
     'The stylesheet of the selected theme will be used for the dark mode.' => 'Das Stylesheet des ausgewählten Themes wird für den dunklen Modus verwendet.',
-    'Users can always set their theme preferences in Account Settings > General.' => 'Nutzer können ihre Theme-Einstellungen immer in den Account-Einstellungen unter "Allgemein" wählen.',
+    'Users can set their theme preferences also in Account Settings > General.' => 'Nutzer können die Theme-Einstellung auch in den Account-Einstellungen unter "Allgemein" vornehemen.',
 ];
