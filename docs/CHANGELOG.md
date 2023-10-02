@@ -1,10 +1,12 @@
 Changelog
 =========
+
 ## TBA
 - Enh: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/15 clear theme setting when base theme is changed via UI
 - Enh: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/15 cache theme setting
 - Themes: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/17 fix button color in Marketplace
 - Themes: https://github.com/felixhahnweilheim/humhub-dark-mode/pull/21 small color updates (left border in dropdown menus, Tasks Module: checklist hover)
+- Fix #23: Crash on theme changing
 
 ## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
