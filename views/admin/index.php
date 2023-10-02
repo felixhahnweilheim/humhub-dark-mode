@@ -18,8 +18,11 @@ $baseTheme = Yii::$app->view->theme->name;
         </div>
         <?php $form = ActiveForm::begin(['id' => 'configure-form']);?>
 
-            <?= $form->field($model, 'theme')->dropdownList($model->getThemes());
-            ?>
+            <?= $form->field($model, 'theme')->dropdownList($model->getThemes()); ?>
+            
+            <hr>
+            <h3><?= Yii::t('DarkModeModule.admin', 'Button') ?></h3>
+            <?= $form->field($model, 'showButton')->checkbox(); ?>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>

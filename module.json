@@ -1,6 +1,6 @@
 {
     "id": "dark-mode",
-    "version": "1.0.0-beta4",
+    "version": "1.0.0-dev",
     "name": "Dark Mode",
     "description": "Adds a Dark Mode to HumHub",
     "humhub": {

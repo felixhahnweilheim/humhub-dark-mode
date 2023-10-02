@@ -6,4 +6,5 @@ return [
     'Follow system (Default)' => 'System-Einstellung folgen (Standard)',
     'Light' => 'Hell',
     'Theme preferences' => 'Theme-Einstellungen',
+    'Dark Mode' => 'Dunkler Modus',
 ];
