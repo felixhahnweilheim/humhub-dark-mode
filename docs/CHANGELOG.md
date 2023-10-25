@@ -8,7 +8,7 @@ Changelog
 - Themes: #17 fix button color in Marketplace
 - Themes: #21 small color updates (left border in dropdown menus, Tasks Module: checklist hover)
 - Themes: #22 small color updates (account menu)
-- Themes: small color update (scroll down arrow in Messenger)
+- Themes: #26 small color update (scroll down arrow in Messenger)
 
 ## 1.0.0-beta4 (31/8/2023)
 - Enh: only show dark themes in configuration page
