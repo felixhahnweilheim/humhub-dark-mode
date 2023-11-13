@@ -5,6 +5,7 @@ Changelog
 - Enh: #22 Make top bar button optional and add dark Mode setting to Account Menu > General
 - Enh: #15 clear theme setting when base theme is changed via UI (also see Fix #23: Crash on theme changing)
 - Enh: #15 cache theme setting
+- Enh: Admin configuration page: added links to Github repository and Donate link
 - Themes: #17 fix button color in Marketplace
 - Themes: #21 small color updates (left border in dropdown menus, Tasks Module: checklist hover)
 - Themes: #22 small color updates (account menu)
