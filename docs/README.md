@@ -15,7 +15,7 @@ You can decide between 3 options:
 - [Enterprise Theme](https://marketplace.humhub.com/module/enterprise-theme)
 - [Clean Theme](https://marketplace.humhub.com/module/clean-theme/description)
 
-## Custom Dark Theme
+### Custom Dark Theme
 
 In the module configuration, you can select a custom theme as dark theme.
 
@@ -25,6 +25,11 @@ You can do so by using the [Theme Builder](https://marketplace.humhub.com/module
 **Note:** The name of the theme has to contain the word "dark".
 
 Alternatively, you can add a `dark.css` to an existing theme next to the `theme.css` file.
+
+## Button
+
+By default the module adds a button to the top bar. This can be switched off in the module settings.
+Additionally users can change their preference in the Account Settings menu.
 
 ## Credits
 

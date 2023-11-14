@@ -2,6 +2,7 @@ Changelog
 =========
 
 ## TBA
+- Enh: #27 Admin configuration page: added links to Github repository and Donate link
 - Enh: #22 Make top bar button optional and add dark Mode setting to Account Menu > General
 - Enh: #15 clear theme setting when base theme is changed via UI (also see Fix #23: Crash on theme changing)
 - Enh: #15 cache theme setting
@@ -33,17 +34,3 @@ Changelog
 - Move stylesheet into new "DarkHumHub" theme (taken by default)
 - Theme: add "!important" for external modules CSS
 - Theme: white text in primary buttons
-
-## 1.0.0-beta1 (8/6/2023)
-- update documentation
-
-## 0.2.1 (6/6/2023)
-- Enh: add SameSite attribute to cookie
-- Enh: documentation
-
-## 0.2.0 (6/6/2023)
-- Theme: black top bar
-- Theme: module compatibility (https://github.com/felixhahnweilheim/humhub-dark-mode/issues/1)
-
-## 0.1.0 (30/5/2023)
-- first version
