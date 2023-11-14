@@ -10,6 +10,7 @@ You can decide between 3 options:
 - "Dark" - always use dark mode
 
 ## Compatible Themes
+
 - Community Theme
 - [Enterprise Theme](https://marketplace.humhub.com/module/enterprise-theme)
 - [Clean Theme](https://marketplace.humhub.com/module/clean-theme/description)
@@ -26,6 +27,7 @@ You can do so by using the [Theme Builder](https://marketplace.humhub.com/module
 Alternatively, you can add a `dark.css` to an existing theme next to the `theme.css` file.
 
 ## Button
+
 By default the module adds a button to the top bar. This can be switched off in the module settings.
 Additionally users can change their preference in the Account Settings menu.
 
