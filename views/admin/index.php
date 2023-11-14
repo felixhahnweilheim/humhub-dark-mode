@@ -35,14 +35,14 @@ $externalIcon = Icon::get('external-link') . ' ';
     <div class="panel-body">
         <p>
             <?= Yii::t('DarkModeModule.admin', 'The Dark Mode module has been developed and is maintained by {name}.', ['name' => 'Felix Hahn']) ?> &nbsp;
-            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'Github account'), $githubProfile,  ['target' => '_blank']) ?>
+            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'GitHub account'), $githubProfile,  ['target' => '_blank']) ?>
         </p>
         <p>
             <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'Donate'), $githubSponsor,  ['class' => 'btn btn-info', 'target' => '_blank']) ?> &nbsp;
             <?= Yii::t('DarkModeModule.admin', 'Thank you!') ?>
         </p>
         <p>
-            <?= Yii::t('DarkModeModule.admin', 'Github Repository:') ?> &nbsp;
+            <?= Yii::t('DarkModeModule.admin', 'GitHub Repository:') ?> &nbsp;
             <?= Html::a($externalIcon . $repositoryName, $repository,  ['target' => '_blank']) ?>
         </p>
     </div>
