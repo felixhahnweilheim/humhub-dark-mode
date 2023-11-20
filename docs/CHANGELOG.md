@@ -1,7 +1,7 @@
 Changelog
 =========
 
-## TBA
+## 1.0.0 (14/11/2023)
 - Enh: #27 Admin configuration page: added links to Github repository and Donate link
 - Enh: #22 Make top bar button optional and add dark Mode setting to Account Menu > General
 - Enh: #15 clear theme setting when base theme is changed via UI (also see Fix #23: Crash on theme changing)
