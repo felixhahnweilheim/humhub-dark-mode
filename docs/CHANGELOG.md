@@ -1,5 +1,7 @@
 Changelog
 =========
+## TBA
+- Themes: #29 small color issues with external modules (Custom Pages, External Calendar)
 
 ## 1.0.0 (14/11/2023)
 - Enh: #27 Admin configuration page: added links to Github repository and Donate link
