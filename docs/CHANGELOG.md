@@ -1,6 +1,7 @@
 Changelog
 =========
 ## TBA
+- Themes: fix introduction tour
 - Themes: #29 small color issues with external modules (Custom Pages, External Calendar)
 
 ## 1.0.0 (14/11/2023)
