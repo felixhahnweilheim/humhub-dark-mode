@@ -1,8 +1,5 @@
 Changelog
 =========
-## TBA
-- Enh: improve saving of modal window (show success message)
-
 ## 1.0.1 (22/11/2023)
 - Themes: #31 fix introduction tour
 - Themes: #29 small color issues with external modules (Custom Pages, External Calendar)
