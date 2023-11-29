@@ -1,5 +1,8 @@
 Changelog
 =========
+## TBA
+- Themes: fix background color in Markdown Editor
+
 ## 1.0.1 (22/11/2023)
 - Themes: #31 fix introduction tour
 - Themes: #29 small color issues with external modules (Custom Pages, External Calendar)
