@@ -2,7 +2,7 @@ Changelog
 =========
 ## TBA
 - Themes: #34 fix background color in Markdown Editor
-- Themes: fix small color issues (audio player, color picker)
+- Themes: fix small color issues (audio player, color, icon and date pickers)
 
 ## 1.0.1 (22/11/2023)
 - Themes: #31 fix introduction tour

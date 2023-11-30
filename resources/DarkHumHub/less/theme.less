@@ -27,8 +27,8 @@
 
 // Forms, textarea
 .form-control, textarea {
-    color: @text-color-highlight;
-    background-color: @background-color-secondary;
+    color: @text-color-highlight !important;
+    background-color: @background-color-secondary !important;
 }
 ::placeholder {
     color: @text-color-soft !important;
@@ -43,13 +43,14 @@
     border-color: @background4;
 }
 
-// Select2
+// Select2 (HumHub)
+// for Bootstrap Select2 see below
 .select2-container--humhub .select2-selection, .select2-container--humhub .select2-selection--single .select2-selection__rendered {
     color: @text-color-highlight;
     background-color: @background3;
 }
 .select2-dropdown {
-    background-color: @background3;
+    background-color: @background3 !important;
 }
 .select2-container--humhub .select2-results__option[aria-selected=true] {
     background-color: @background-color-secondary;
@@ -387,20 +388,43 @@ input[type="checkbox"], input[type="radio"] {
     background-color: #323a3f;
 }
 
-// UI Icons (e.g. date picker arrows)
-.ui-icon, .ui-widget-content .ui-icon, .ui-widget-header .ui-icon,  {
-    filter: invert(100%);
-}
-
-// Bootstrap Timepicker
-.bootstrap-timepicker-widget table td a:hover {
-    background-color: @background-color-secondary;
-    border-color: @background-color-secondary;
-}
-
 // Color picker (e.g. Space settings)
 .hexInput {
     background: @background-color-secondary;
+}
+
+// Date Picker (e.g. Birthday in profile)
+.ui-datepicker-month, .ui-datepicker-year {
+    background-color: @background-color-secondary;
+    border-color: @background3;
+}
+
+// ------------------
+// Bootstrap
+// ------------------
+
+// Bootstrap Timepicker
+.bootstrap-timepicker-widget table td a:hover {
+    background-color: @background-color-secondary !important;
+    border-color: @background-color-secondary !important;
+}
+
+.select2-container--bootstrap {
+    .select2-selection {
+        border-color: @background4 !important;
+    }
+    .select2-selection, .select2-selection--single .select2-selection__rendered {
+        color: @text-color-highlight !important;
+        background-color: @background3 !important;
+    }
+    .select2-search--dropdown .select2-search__field {
+        background-color: @background-color-main !important;
+        color: @text-color-main !important;
+    }
+}
+.select2-hidden-accessible option[selected] {
+    background-color: @background4 !important;
+    color: @text-color-highlight !important;
 }
 
 // -------------------------------------
@@ -512,3 +536,4 @@ input[type="checkbox"], input[type="radio"] {
 .closed-task-list-view li:hover {
     background-color: #4d443b !important;
 }
+
