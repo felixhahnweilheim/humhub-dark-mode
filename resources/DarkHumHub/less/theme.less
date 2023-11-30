@@ -25,10 +25,10 @@
     border-color: transparent;
 }
 
-// Forms
-.form-control {
+// Forms, textarea
+.form-control, textarea {
     color: @text-color-highlight;
-    background-color: @background3;
+    background-color: @background-color-secondary;
 }
 ::placeholder {
     color: @text-color-soft !important;
@@ -314,6 +314,9 @@ hr {
 }
 
 // Prosemirror Editor
+.ProseMirror hr {
+    border-color: @background4;
+}
 .ProsemirrorEditor.plainMenu .ProseMirror-menubar {
     color: @text-color-main;
 }
