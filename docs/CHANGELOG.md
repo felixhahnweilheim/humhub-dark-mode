@@ -1,6 +1,6 @@
 Changelog
 =========
-## TBA
+## 1.0.2 (04/12/2023)
 - Themes: #34 fix background color in Markdown Editor
 - Themes: #35 fix small color issues (audio player, color, icon and date pickers)
 
