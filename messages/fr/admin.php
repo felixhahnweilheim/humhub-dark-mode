@@ -3,7 +3,7 @@
 return [
     '<strong>Dark Mode</strong> module configuration' => 'Configuration du module <strong>Mode Sombre</strong>',
     'Adds a Dark Mode to HumHub' => 'Ajoute un mode sombre à HumHub',
-    'Current base theme: ' => 'Thème de base actuel :',
+    'Current base theme: ' => 'Thème de base actuel: ',
     'Dark Mode' => 'Mode Sombre',
     'Dark Theme' => 'Theme Sombre',
     'Donate' => 'Donner',
