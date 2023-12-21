@@ -112,9 +112,9 @@ class Config extends \yii\base\Model
         $info['fileName'] = 'theme.css';
 
         if ($this->theme == 'DarkEnterprise') {
-            $info['path'] = '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkEnterprise' . DIRECTORY_SEPARATOR . 'css';
+            $info['path'] = '@dark-mode/resources/DarkEnterprise/css';
         } elseif ($this->theme == 'DarkHumHub') {
-            $info['path'] = '@dark-mode' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR . 'DarkHumHub' . DIRECTORY_SEPARATOR . 'css';
+            $info['path'] = '@dark-mode/resources/DarkHumHub/css';
         } else {
             // Themes with dark.css
             if (strpos($this->theme, self::DARK_CSS_SUFFIX) !== false) {
