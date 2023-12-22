@@ -1,6 +1,6 @@
 Changelog
 =========
-## TBA
+## 1.0.3 (23/12/2023)
 - Fix #38: broken path aliases on Windows
 - DarkEnterprise #40: small color issue in top bar and space dropdown menu
 - Themes #42: small color issues with external modules (Tasks, Wiki)
