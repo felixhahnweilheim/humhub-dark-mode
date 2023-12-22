@@ -437,7 +437,7 @@ input[type="checkbox"], input[type="radio"] {
 // -----
 // Wiki compare
 .layout-content-container .wiki-content.wiki-page-diff del, .layout-content-container .wiki-content.wiki-page-diff ins {
-    color: #000;
+    color: #000 !important;
 }
 
 // Messenger / Mail
@@ -450,6 +450,10 @@ input[type="checkbox"], input[type="radio"] {
 .conversation-scroll-down-button {
     background: @background-color-secondary;
     box-shadow: 1px 1px 2px @background-color-page;
+}
+// manage Tags Button
+.message-tag-filter-group .manage-tags-link {
+    border-color: @background4 !important;
 }
 
 // Calendar
@@ -516,7 +520,7 @@ input[type="checkbox"], input[type="radio"] {
     color: @text-color-soft2 !important;
 }
 .task-list-li, .task-list-items .task-list-task-completed-show-more {
-    background-color: @background-color-secondary !important;
+    background-color: @background-color-main !important;
 }
 .task-list-li .closed-task-lists-container, .task-list .pagination-container, #task-container .panel-heading {
     background-color: @background-color-main !important;
@@ -534,9 +538,30 @@ input[type="checkbox"], input[type="radio"] {
 // Tasks Hover
 .task-list-container .task-list-title-bar > div:hover,
 .task-list-items .task-list-item .task-list-task-title-bar > div:hover {
-    background: @background4 !important;
+    background: @background-color-secondary !important;
 }
 .closed-task-list-view li:hover {
     background-color: #4d443b !important;
 }
+// Different Border Colors
+#task-space-menu {
+    border-bottom-color: @background3 !important;
 
+    li a {
+        border-color: @background3 !important;
+    }
+}
+#task-container .panel-heading .task-header-panel {
+    border-color: @background3 !important;
+}
+.task-list-items .task-list-item, .task-list-title-bar, .task-controls {
+    border-color: @background4 !important;
+}
+// Sort by drag and drop
+.task-list-items .task-list-item .task-list-task-title-bar.highlighter, .task-list-state-highlight, .task-state-highlight {
+    background-color: @background-color-highlight !important;
+}
+.ui-sortable-helper {
+    background-color: @background-color-highlight !important;
+    border-color: @background-color-secondary !important;
+}
