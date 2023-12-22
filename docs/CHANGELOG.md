@@ -2,6 +2,7 @@ Changelog
 =========
 ## TBA
 - Fix #38: broken path aliases on Windows
+- DarkEnterprise #39: small color issue in top bar and space dropdown menu
 
 ## 1.0.2 (04/12/2023)
 - Themes: #34 fix background color in Markdown Editor
