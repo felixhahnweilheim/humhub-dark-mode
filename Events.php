@@ -35,12 +35,7 @@ class Events
 	    $menu->addEntry(new MenuLink([
 	        'icon' => 'fa-moon-o',
 	        'label' => Yii::t('DarkModeModule.base', 'Dark Mode'),
-	        'url' => '#',
-	        'htmlOptions' => [
-	            'data-action-click' => 'ui.modal.load',
-	            'data-action-click-url' => Url::toRoute('/dark-mode/user/'),
-	            'data-pjax-prevent' => ''
-	       ],
+	        'url' => Url::toRoute('/dark-mode/user/'),
 	        'sortOrder' => 900,
         ]));
 

@@ -9,7 +9,7 @@ use humhub\widgets\ModalDialog;
 <?php ModalDialog::begin(); ?>
 <?php $form = ActiveForm::begin(); ?> 
 <div class="modal-body">
-    <? $this->render('form', ['model' => $model]);
+    <?= $this->render('form', ['model' => $model, 'form' => $form]); ?>
 </div>
 <div class="modal-footer">
     <?= ModalButton::cancel() ?>
