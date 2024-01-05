@@ -6,7 +6,7 @@ use humhub\modules\darkMode\models\UserSetting;
 use humhub\widgets\ModalClose;
 use Yii;
 
-class UserController extends \humhub\components\Controller
+class UserController extends \humhub\modules\user\controllers\AccountController
 {
     public function actionIndex()
     {
