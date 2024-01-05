@@ -6,9 +6,22 @@ use humhub\modules\darkMode\models\UserSetting;
 use humhub\widgets\ModalClose;
 use Yii;
 
-class UserController extends \humhub\components\Controller
+class UserController extends \humhub\modules\user\controllers\AccountController
 {
     public function actionIndex()
+    {
+        $form = new UserSetting();
+
+        if ($form->load(Yii::$app->request->post()) && $form->save()) {
+
+            $this->view->saved();
+            $this->redirect(['/dark-mode/user']);
+        }
+
+        return $this->render('index', ['model' => $form]);
+    }
+    
+    public function actionModal()
     {
         $form = new UserSetting();
 
@@ -19,6 +32,6 @@ class UserController extends \humhub\components\Controller
                 ' <script ' . \humhub\libs\Html::nonce() . '>$(function () { location.reload() }); </script>';
         }
 
-        return $this->renderAjax('index', ['model' => $form]);
+        return $this->renderAjax('modal', ['model' => $form]);
     }
 }

@@ -1,5 +1,8 @@
 Changelog
 =========
+## TBA
+- Enh #43: use static page instead of modal window in account settings
+
 ## 1.0.3 (23/12/2023)
 - Fix #38: broken path aliases on Windows
 - DarkEnterprise #40: small color issue in top bar and space dropdown menu

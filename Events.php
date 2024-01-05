@@ -29,19 +29,17 @@ class Events
     }
     
     public static function onAccountSettingsMenuInit($event)
-	{
-	    $menu = $event->sender;
+    {
+        $menu = $event->sender;
         
-	    $menu->addEntry(new MenuLink([
-	        'icon' => 'fa-moon-o',
-	        'label' => Yii::t('DarkModeModule.base', 'Dark Mode'),
-	        'url' => '#',
-	        'htmlOptions' => [
-	            'data-action-click' => 'ui.modal.load',
-	            'data-action-click-url' => Url::toRoute('/dark-mode/user/'),
-	            'data-pjax-prevent' => ''
-	       ],
-	        'sortOrder' => 900,
+        $menu->addEntry(new MenuLink([
+        'icon' => 'fa-moon-o',
+            'label' => Yii::t('DarkModeModule.base', 'Dark Mode'),
+            'url' => Url::toRoute('/dark-mode/user/'),
+            'sortOrder' => 900,
+            'isActive' => (Yii::$app->controller->module
+                    && Yii::$app->controller->module->id === 'dark-mode'
+                    && Yii::$app->controller->id === 'user'),
         ]));
 
         return true;
