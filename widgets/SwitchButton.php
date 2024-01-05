@@ -19,7 +19,7 @@ class SwitchButton extends Widget
     {
         // Always use moon icon
         $this->icon = Icon::get('moon-o');
-        $this->url = Url::toRoute('/dark-mode/user/');
+        $this->url = Url::toRoute('/dark-mode/user/modal/');
     }
     
     public function run()

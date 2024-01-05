@@ -14,11 +14,24 @@ class UserController extends \humhub\components\Controller
 
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
 
+            $this->view->saved();
+            $this->redirect(['/dark-mode/user']);
+        }
+
+        return $this->render('index', ['model' => $form]);
+    }
+    
+    public function actionModal()
+    {
+        $form = new UserSetting();
+
+        if ($form->load(Yii::$app->request->post()) && $form->save()) {
+
             // Close modal and reload page to make apply asset changes (this way the "Saved" message is not shown)
             return ModalClose::widget(['saved' => true]) .
                 ' <script ' . \humhub\libs\Html::nonce() . '>$(function () { location.reload() }); </script>';
         }
 
-        return $this->renderAjax('index', ['model' => $form]);
+        return $this->renderAjax('modal', ['model' => $form]);
     }
 }
