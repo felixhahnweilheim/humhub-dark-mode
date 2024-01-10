@@ -2,6 +2,7 @@ Changelog
 =========
 ## TBA
 - Enh #43: use static page instead of modal window in account settings
+- Enh: Configuration Page: add link to [Guide for Administrators](https://community.humhub.com/u/felixhahn/wiki/Dark+Mode+-+Guide+for+Administrators)
 
 ## 1.0.3 (23/12/2023)
 - Fix #38: broken path aliases on Windows
