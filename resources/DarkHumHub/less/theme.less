@@ -228,6 +228,12 @@ hr {
     border-color: @background3;
 }
 
+// Code
+code {
+    color: @danger;
+    background-color: @background-color-contrast;
+}
+
 // Media List
 .media-list li {
     border-color: @background3;
@@ -295,6 +301,9 @@ hr {
 // Table
 .table-hover > tbody > tr:hover {
     background-color: @background3;
+}
+.table-striped > tbody > tr:nth-of-type(2n+1) {
+    background-color: @background-color-secondary;
 }
 
 // Additional post types in post form
@@ -540,7 +549,8 @@ input[type="checkbox"], input[type="radio"] {
 .task-list-items .task-list-item .task-list-task-title-bar > div:hover {
     background: @background-color-secondary !important;
 }
-.closed-task-list-view li:hover {
+// body is just added to make the rule more specific to overwrite an !important rule
+body .closed-task-list-view li:hover {
     background-color: #4d443b !important;
 }
 // Different Border Colors
