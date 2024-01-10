@@ -6,10 +6,9 @@ use yii\helpers\Html;
 
 $baseTheme = Yii::$app->view->theme->name;
 
-$githubProfile = 'https://github.com/felixhahnweilheim';
 $githubSponsor = 'https://github.com/sponsors/felixhahnweilheim';
 $repository = 'https://github.com/felixhahnweilheim/humhub-dark-mode';
-$repositoryName = 'felixhahnweilheim/humhub-dark-mode';
+$guideLink = 'https://community.humhub.com/u/felixhahn/wiki/Dark+Mode+-+Guide+for+Administrators';
 $externalIcon = Icon::get('external-link') . ' ';
 ?>
 
@@ -33,17 +32,14 @@ $externalIcon = Icon::get('external-link') . ' ';
 </div>
 <div class="panel panel-default">
     <div class="panel-body">
-        <p>
-            <?= Yii::t('DarkModeModule.admin', 'The Dark Mode module has been developed and is maintained by {name}.', ['name' => 'Felix Hahn']) ?> &nbsp;
-            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'GitHub account'), $githubProfile,  ['target' => '_blank']) ?>
-        </p>
-        <p>
-            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'Donate'), $githubSponsor,  ['class' => 'btn btn-info', 'target' => '_blank']) ?> &nbsp;
-            <?= Yii::t('DarkModeModule.admin', 'Thank you!') ?>
-        </p>
-        <p>
-            <?= Yii::t('DarkModeModule.admin', 'GitHub Repository:') ?> &nbsp;
-            <?= Html::a($externalIcon . $repositoryName, $repository,  ['target' => '_blank']) ?>
-        </p>
+        <div style="margin-bottom: 10px">
+            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'Guide for Administrators'), $guideLink,  ['class' => 'btn btn-sm btn-info', 'target' => '_blank']) ?>
+        </div>
+        <div style="margin: 10px 0">
+            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'Donate'), $githubSponsor,  ['class' => 'btn btn-sm btn-info', 'target' => '_blank']) ?>
+        </div>
+        <div style="margin-top: 10px 0">
+            <?= Html::a($externalIcon . Yii::t('DarkModeModule.admin', 'GitHub Repository'), $repository, ['class' => 'btn btn-sm btn-default', 'target' => '_blank']) ?>
+        </div>
     </div>
 </div>
