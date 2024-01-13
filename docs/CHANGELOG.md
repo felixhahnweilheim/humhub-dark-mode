@@ -1,8 +1,9 @@
 Changelog
 =========
-## TBA
+## 1.0.4 (13/1/2024)
 - Enh #43: use static page instead of modal window in account settings
 - Enh: Configuration Page: add link to [Guide for Administrators](https://community.humhub.com/u/felixhahn/wiki/Dark+Mode+-+Guide+for+Administrators)
+- Themes: small color issues (tables, code in posts and comments)
 
 ## 1.0.3 (23/12/2023)
 - Fix #38: broken path aliases on Windows
