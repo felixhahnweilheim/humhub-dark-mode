@@ -12,7 +12,7 @@ use humhub\libs\Html;
         <?= $this->render('form', ['model' => $model, 'form' => $form]); ?>
     </div>
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('VerifiedModule.base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']); ?>
+        <?= Html::saveButton(); ?>
     </div>
 <?php ActiveForm::end(); ?>
 
