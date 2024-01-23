@@ -1,5 +1,8 @@
 Changelog
 =========
+## 1.0.5 (23/1/2024)
+- Fix #47: wrong message category of save button
+
 ## 1.0.4 (13/1/2024)
 - Enh #43: use static page instead of modal window in account settings
 - Enh: Configuration Page: add link to [Guide for Administrators](https://community.humhub.com/u/felixhahn/wiki/Dark+Mode+-+Guide+for+Administrators)
