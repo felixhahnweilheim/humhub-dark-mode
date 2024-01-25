@@ -16,7 +16,7 @@ class Config extends \yii\base\Model
 
     public $theme;
 
-    public $showButton = true;
+    public $showButton;
 
     public function init()
     {
