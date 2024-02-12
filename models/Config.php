@@ -16,17 +16,18 @@ class Config extends \yii\base\Model
 
     public $theme;
 
-    public $showButton;
+    public $showButton = true;
 
     public function init()
     {
         parent::init();
 
-        $settings = Yii::$app->getModule('dark-mode')->settings;
-
-        $this->theme = $settings->get('theme');
-
-        $this->showButton = $settings->get('showButton', true);
+        $module = Yii::$app->getModule('dark-mode');
+        // make sure module is enabled before retrieving settings, see https://github.com/felixhahnweilheim/humhub-dark-mode/issues/48
+        if ($module) {
+            $this->theme = $module->settings->get('theme');
+            $this->showButton = $module->settings->get('showButton', $this->showButton);
+        }
 
         // If no setting was found, get recommended theme or fallback (DarkHumHub) 
         if (empty($this->theme)) {
