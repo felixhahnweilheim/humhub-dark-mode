@@ -33,6 +33,9 @@ Please also refer to the [Guide for Administrators](https://community.humhub.com
 By default the module adds a button to the top bar. This can be switched off in the module settings.
 Additionally users can change their preference in the Account Settings menu.
 
+## Translations
+Please only use the [Translation Community](translate.humhub.org/user/account/edit) to contribute translations.
+
 ## Credits
 
 [Felix Hahn](https://github.com/felixhahnweilheim) (developer)
