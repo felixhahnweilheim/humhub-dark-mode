@@ -6,8 +6,10 @@ use humhub\modules\darkMode\models\UserSetting;
 use humhub\widgets\ModalClose;
 use Yii;
 
-class UserController extends \humhub\modules\user\controllers\AccountController
+class UserController extends \humhub\components\Controller
 {
+    public $subLayout = '@humhub/modules/user/views/account/_layout';
+
     public function actionIndex()
     {
         $form = new UserSetting();

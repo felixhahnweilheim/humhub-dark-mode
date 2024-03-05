@@ -2,6 +2,7 @@ Changelog
 =========
 ## TBA
 - Fix #49: module update with error logged when module is inactive
+- Fix #51: let guests access the modal window (bug since v1.0.4)
 
 ## 1.0.5 (23/1/2024)
 - Fix #47: wrong message category of save button
