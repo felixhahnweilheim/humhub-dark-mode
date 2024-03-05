@@ -28,5 +28,8 @@ class Module extends \humhub\components\Module {
     {
         Yii::$app->cache->delete(DarkStyleAsset::PATH_CACHE);
         Yii::$app->cache->delete(DarkStyleAsset::FILENAME_CACHE);
+        
+        // Don't forget to call this!!
+        parent::disable();
     }
 }
