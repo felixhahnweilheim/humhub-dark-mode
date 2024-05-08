@@ -10,6 +10,13 @@ class UserController extends \humhub\components\Controller
 {
     public $subLayout = '@humhub/modules/user/views/account/_layout';
 
+    protected function getAccessRules()
+    {
+        return [
+	    ['login' => ['index']]
+        ];
+    }
+
     public function actionIndex()
     {
         $form = new UserSetting();
