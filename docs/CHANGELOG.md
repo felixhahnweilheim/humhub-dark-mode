@@ -1,5 +1,9 @@
 Changelog
 =========
+## 1.0.7 TBA
+- Update styles for HumHub 1.16
+- Enh: controller access rules
+
 ## 1.0.6 (11/03/2024) 
 - Fix #49: module update with error logged when module is inactive
 - Fix #51: let guests access the modal window (bug since v1.0.4)
