@@ -1,6 +1,6 @@
 Changelog
 =========
-## 1.0.7 TBA
+## 1.0.7 (9/5/2024)
 - Update styles for HumHub 1.16
 - Enh: controller access rules
 
