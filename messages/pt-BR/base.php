@@ -5,5 +5,5 @@ return array (
   'Dark Mode' => 'Modo escuro',
   'Follow system (Default)' => 'Seguir sistema (padrão)',
   'Light' => 'Claro',
-  'Theme preferences' => 'Preferências de tema',
+  'Theme preferences' => 'Preferências do Tema',
 );
