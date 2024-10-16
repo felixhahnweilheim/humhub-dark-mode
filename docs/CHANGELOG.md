@@ -1,5 +1,8 @@
 Changelog
 =========
+## 1.0.9 TBA
+- Update URL to documentation
+
 ## 1.0.8 (19/06/2024)
 - Fix colors of new search in HumHub 1.16
 - Fix colors of default button in HumHub 1.16
