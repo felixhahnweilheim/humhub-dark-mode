@@ -8,7 +8,7 @@ $baseTheme = Yii::$app->view->theme->name;
 
 $githubSponsor = 'https://github.com/sponsors/felixhahnweilheim';
 $repository = 'https://github.com/felixhahnweilheim/humhub-dark-mode';
-$guideLink = 'https://community.humhub.com/u/felixhahn/wiki/Dark+Mode+-+Guide+for+Administrators';
+$guideLink = 'https://felixwebdesign.de/en/humhub/docs/seo';
 $externalIcon = Icon::get('external-link') . ' ';
 ?>
 
