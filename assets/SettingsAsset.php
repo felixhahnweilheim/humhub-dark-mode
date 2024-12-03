@@ -30,8 +30,6 @@ class SettingsAsset extends AssetBundle
             'css-url' => $url
         ]);
         
-        Yii::error(Url::to(['/dark-mode/user/modal']));
         return parent::register($view);
     }
-    
 }
