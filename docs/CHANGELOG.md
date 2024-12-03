@@ -1,6 +1,7 @@
 Changelog
 =========
 ## 1.0.9 TBA
+- Enh: update theme while clicking (removes the full page reload)
 - Update URL to documentation
 
 ## 1.0.8 (19/06/2024)
