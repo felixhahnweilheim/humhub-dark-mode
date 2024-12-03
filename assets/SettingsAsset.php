@@ -8,10 +8,6 @@ use Yii;
 
 class SettingsAsset extends AssetBundle
 {
-    public $publishOptions = [
-        'forceCopy' => true//todo
-    ];
-    
     public $sourcePath = '@dark-mode/resources/module';
     
     public $js = [
