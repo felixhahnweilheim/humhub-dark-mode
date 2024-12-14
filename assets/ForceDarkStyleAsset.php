@@ -10,5 +10,5 @@ use humhub\modules\darkMode\assets\DarkStyleAsset;
  */
 class ForceDarkStyleAsset extends DarkStyleAsset
 {
-    public $cssOptions = ['media' => 'screen'];
+    public $cssOptions = ['id' => 'dark-css-link', 'media' => 'screen'];
 }

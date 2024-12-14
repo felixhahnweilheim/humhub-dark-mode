@@ -37,8 +37,7 @@ class UserController extends \humhub\components\Controller
         if ($form->load(Yii::$app->request->post()) && $form->save()) {
 
             // Close modal and reload page to make apply asset changes (this way the "Saved" message is not shown)
-            return ModalClose::widget(['saved' => true]) .
-                ' <script ' . \humhub\libs\Html::nonce() . '>$(function () { location.reload() }); </script>';
+            return ModalClose::widget(['saved' => true]);
         }
 
         return $this->renderAjax('modal', ['model' => $form]);

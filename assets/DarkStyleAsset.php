@@ -24,7 +24,7 @@ class DarkStyleAsset extends AssetBundle
     const FILENAME_CACHE = "darkMode_fileName";
     
     // Tell browser to use stylesheet only when in dark mode
-    public $cssOptions = ['media' => 'screen and (prefers-color-scheme: dark)'];
+    public $cssOptions = ['id' => 'dark-css-link', 'media' => 'screen and (prefers-color-scheme: dark)'];
 
     public function init()
     {
