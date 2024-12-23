@@ -1,7 +1,8 @@
 Changelog
 =========
-## 1.0.9 TBA
-- Enh: update theme while clicking (removes the full page reload)
+## 1.0.9 (23/12/2024)
+- Enh #59: update theme while clicking (removes the full page reload)
+- #60: Update module image
 - Update URL to documentation
 
 ## 1.0.8 (19/06/2024)
