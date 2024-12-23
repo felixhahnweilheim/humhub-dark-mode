@@ -21,7 +21,7 @@ $externalIcon = Icon::get('external-link') . ' ';
 
             <?= $form->field($model, 'showButton')->checkbox(); ?>
             <?= $form->field($model, 'theme')->dropdownList($model->getThemes()); ?>
-            <p><?= Icon::get('info-circle') . ' ' . Yii::t('DarkModeModule.admin', 'Current base theme: ') . $baseTheme ?></p>
+            <p><?= Icon::get('info-circle') . ' ' . Yii::t('DarkModeModule.admin', 'Current base theme: ') . ' ' . $baseTheme ?></p>
 
         <div class="form-group">
             <?= Html::submitButton(Yii::t('base', 'Save'), ['class' => 'btn btn-primary', 'data-ui-loader' => '']) ?>
