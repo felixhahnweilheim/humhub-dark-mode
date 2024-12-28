@@ -1,7 +1,8 @@
 Changelog
 =========
-## 1.0.9 TBA
-- Enh #59: update theme while clicking (removes the full page reload)
+## 1.0.9 (28/12/2024)
+- Update CSS for HumHub v1.17
+- Enh #59: update theme while clicking via JavaScript (removes the full page reload)
 - #60: Update module image
 - Update URL to documentation
 
