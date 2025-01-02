@@ -5,7 +5,6 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     let $inputRadio;
     let $cancelBtn;
     let $startVal;
-    const $cssUrl = module.config['css-url'];
     
     const init = function () {
         $(function () {
@@ -41,25 +40,15 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     }
     
     function setDefault() {
-        if ($('#dark-css-link').length) {
-            $('#dark-css-link').attr('media', 'screen and (prefers-color-scheme: dark)');
-        } else {
-            $('head').append('<link id="dark-css-link" rel="stylesheet" type="text/css" media="screen and (prefers-color-scheme: dark)" href="' + $cssUrl + '">');
-        }
+        $('#dark-css-link').attr('media', 'screen and (prefers-color-scheme: dark)');
     }
     
     function setLight() {
-        if ($('#dark-css-link').length) {
-            $('#dark-css-link').remove();
-        }
+        $('#dark-css-link').attr('media', 'none');
     }
     
    function setDark() {
-        if ($('#dark-css-link').length) {
-            $('#dark-css-link').attr('media', 'screen');
-        } else {
-            $('head').append('<link id="dark-css-link" rel="stylesheet" type="text/css" media="screen" href="' + $cssUrl + '">');
-        }
+        $('#dark-css-link').attr('media', 'all');
     }
 
     module.export({

@@ -1,5 +1,8 @@
 Changelog
 =========
+## TBA
+- Fix #63: Stuck when switching between color modes
+
 ## 1.0.9 (28/12/2024)
 - Update CSS for HumHub v1.17
 - Enh #59: update theme while clicking via JavaScript (removes the full page reload)
