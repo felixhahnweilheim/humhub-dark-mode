@@ -21,7 +21,7 @@ class SettingsAsset extends AssetBundle
     {
         $mode = (new UserSetting())->darkMode;
         if ($mode === UserSetting::OPTION_LIGHT) {
-            DarkStyleAsset::register($view);
+            DarkStyleLightAsset::register($view);
         }
         $view->registerJsConfig('dark-mode.switch', [
             'initOnAjaxUrls' => [
