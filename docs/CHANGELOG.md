@@ -1,6 +1,7 @@
 Changelog
 =========
 ## TBA
+- Fix #63: Stuck when switching between color modes
 - Fix colors of notification dropdown
 - Changed default color (slightly lighter)
 
