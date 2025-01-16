@@ -2,6 +2,8 @@ Changelog
 =========
 ## TBA
 - Fix #63: Stuck when switching between color modes
+- Fix colors of notification dropdown
+- Changed default color (slightly lighter)
 
 ## 1.0.9 (28/12/2024)
 - Update CSS for HumHub v1.17
