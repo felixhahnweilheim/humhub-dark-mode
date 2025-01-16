@@ -5,7 +5,8 @@ namespace humhub\modules\darkMode\assets;
 use humhub\modules\darkMode\assets\DarkStyleAsset;
 
 /*
- * DarkStyleLightAsset is only used to load the dark stylesheet when we open the settings form and are in light mode
+ * DarkStyleLightAsset is used to load the dark stylesheet in light mode - with media=none
+ * We load it so we can easily switch between modes via JavaScript
  */
 class DarkStyleLightAsset extends DarkStyleAsset
 {
