@@ -19,10 +19,6 @@ class SettingsAsset extends AssetBundle
     
     public static function register($view)
     {
-        $mode = (new UserSetting())->darkMode;
-        if ($mode === UserSetting::OPTION_LIGHT) {
-            DarkStyleLightAsset::register($view);
-        }
         $view->registerJsConfig('dark-mode.switch', [
             'initOnAjaxUrls' => [
                 Url::to(['/dark-mode/user/modal']), // Don't add any params to the URL
