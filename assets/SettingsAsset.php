@@ -2,12 +2,15 @@
 
 namespace humhub\modules\darkMode\assets;
 
+use humhub\modules\darkMode\models\UserSetting;
 use humhub\components\assets\AssetBundle;
 use yii\helpers\Url;
-use Yii;
 
 class SettingsAsset extends AssetBundle
 {
+    public $publishOptions = [
+        'forceCopy' => false
+    ];
     public $sourcePath = '@dark-mode/resources/module';
     
     public $js = [
@@ -16,14 +19,10 @@ class SettingsAsset extends AssetBundle
     
     public static function register($view)
     {
-        $darkStyleAsset = new DarkStyleAsset();
-        $am = $view->getAssetManager();
-        $url = $am->publish($darkStyleAsset->sourcePath . $am->getAssetPath($darkStyleAsset, $darkStyleAsset->css[0]))[1];
         $view->registerJsConfig('dark-mode.switch', [
             'initOnAjaxUrls' => [
                 Url::to(['/dark-mode/user/modal']), // Don't add any params to the URL
-            ],
-            'css-url' => $url
+            ]
         ]);
         
         return parent::register($view);
