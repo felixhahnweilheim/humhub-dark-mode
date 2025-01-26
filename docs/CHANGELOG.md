@@ -1,6 +1,6 @@
 Changelog
 =========
-## TBA
+## 1.0.10 (26/01/2025)
 - Fix #63: Stuck when switching between color modes
 - Fix colors of notification dropdown
 - Changed default color (slightly lighter)
