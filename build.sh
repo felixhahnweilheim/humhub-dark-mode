@@ -26,6 +26,6 @@ rm css/temporary.less
 cd ../../
 
 # 2) Update message files
-cd ../../
+cd ../../protected/
 php yii message/extract-module dark-mode
 cd modules/dark-mode

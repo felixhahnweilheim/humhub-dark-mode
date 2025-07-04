@@ -1,5 +1,8 @@
 Changelog
 =========
+## 1.0.11 (04/07/2025)
+- Fix #67: Layout bug with new versions of Enterprise theme
+
 ## 1.0.10 (26/01/2025)
 - Fix #63: Stuck when switching between color modes
 - Fix colors of notification dropdown
