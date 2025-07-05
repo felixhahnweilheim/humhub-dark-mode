@@ -1,5 +1,8 @@
 Changelog
 =========
+## (unreleased)
+- Fix link to Administrators Guide in README.md
+
 ## 1.0.11 (04/07/2025)
 - Fix #67: Layout bug with new versions of Enterprise theme
 
