@@ -26,7 +26,7 @@ You can do so by using the [Theme Builder](https://marketplace.humhub.com/module
 
 Alternatively, you can add a `dark.css` to an existing theme next to the `theme.css` file.
 
-Please also refer to the [Guide for Administrators](https://felixwebdesign.de/humhub/docs/dark-mode/).
+Please also refer to the [Guide for Administrators](https://felixwebdesign.de/en/humhub/docs/dark-mode/).
 
 ## Button
 
