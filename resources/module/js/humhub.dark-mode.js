@@ -17,8 +17,10 @@ humhub.module('dark-mode', function (module, require, $) {
     function setDefault() {
         if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
             setDark();
+            listenForDefault();
         } else {
             setLight();
+            listenForDefault();
         }
     }
     
@@ -28,6 +30,12 @@ humhub.module('dark-mode', function (module, require, $) {
     
     function setDark() {
         $('html').attr('data-bs-theme', 'dark');
+    }
+
+    function listenForDefault() {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            setDefault();
+        })
     }
 
     module.export({
