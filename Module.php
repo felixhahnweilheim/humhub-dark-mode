@@ -16,20 +16,10 @@ class Module extends \humhub\components\Module {
     }
     // Translatable Module Description
     public function getDescription() {
-        return Yii::t('DarkModeModule.admin', 'Adds a Dark Mode to HumHub');
+        return Yii::t('DarkModeModule.admin', 'Adds a Dark Mode Switcher to HumHub');
     }
     // Link to configuration page
     public function getConfigUrl() {
         return Url::to(['/dark-mode/admin']);
-    }
-    
-    // Remove cached settings on deactivation
-    public function disable(): void
-    {
-        Yii::$app->cache->delete(DarkStyleAsset::PATH_CACHE);
-        Yii::$app->cache->delete(DarkStyleAsset::FILENAME_CACHE);
-        
-        // Don't forget to call this!!
-        parent::disable();
     }
 }

@@ -2,19 +2,19 @@
 
 namespace humhub\modules\darkMode\assets;
 
-use humhub\modules\darkMode\models\UserSetting;
 use humhub\components\assets\AssetBundle;
 use yii\helpers\Url;
 
 class SettingsAsset extends AssetBundle
 {
-    public $publishOptions = [
-        'forceCopy' => false
-    ];
     public $sourcePath = '@dark-mode/resources/module';
     
     public $js = [
-        'js/humhub.dark-mode.switch.js'
+        'js/humhub.dark-mode.switch.min.js'
+    ];
+
+    public $depends = [
+        'humhub\modules\darkMode\assets\DarkModeAsset',
     ];
     
     public static function register($view)

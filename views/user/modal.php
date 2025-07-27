@@ -1,19 +1,12 @@
 <?php
 
-use humhub\modules\ui\form\widgets\ActiveForm;
 use humhub\widgets\ModalButton;
-use humhub\widgets\ModalDialog;
+use humhub\widgets\modal\Modal
 
 ?>
 
-<?php ModalDialog::begin(); ?>
-<?php $form = ActiveForm::begin(); ?> 
-<div class="modal-body">
+<?php $form = Modal::beginFormDialog([
+        'footer' => ModalButton::cancel() . ' ' . ModalButton::submitModal(),
+    ]); ?>
     <?= $this->render('form', ['model' => $model, 'form' => $form]); ?>
-</div>
-<div class="modal-footer">
-    <?= ModalButton::cancel() ?>
-    <?= ModalButton::submitModal() ?>
-</div>
-<?php ActiveForm::end(); ?>
-<?php ModalDialog::end(); ?>
+<?php Modal::endFormDialog(); ?>
