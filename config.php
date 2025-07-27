@@ -6,7 +6,6 @@ use humhub\modules\admin\models\forms\DesignSettingsForm;
 use humhub\widgets\NotificationArea;
 use humhub\components\ModuleManager;
 use humhub\modules\user\widgets\AccountSettingsMenu;
-use yii\base\Event;
 
 return [
     'id' => 'dark-mode',
