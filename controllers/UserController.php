@@ -3,7 +3,7 @@
 namespace humhub\modules\darkMode\controllers;
 
 use humhub\modules\darkMode\models\UserSetting;
-use humhub\widgets\ModalClose;
+use humhub\widgets\modal\ModalClose;
 use Yii;
 
 class UserController extends \humhub\components\Controller

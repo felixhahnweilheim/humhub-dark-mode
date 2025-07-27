@@ -11,22 +11,7 @@ You can decide between 3 options:
 
 ## Compatible Themes
 
-- Community Theme
-- [Enterprise Theme](https://marketplace.humhub.com/module/enterprise-theme)
-- [Clean Theme](https://marketplace.humhub.com/module/clean-theme/description)
-
-### Custom Dark Theme
-
-In the module configuration, you can select a custom theme as dark theme.
-
-If you are using a custom theme, it is recommended to create a new dark theme based on it.
-You can do so by using the [Theme Builder](https://marketplace.humhub.com/module/theme-builder/description) or by following the [theming documentation](https://docs.humhub.org/docs/theme/overview/).
-
-**Note:** The name of the theme has to contain the word "dark".
-
-Alternatively, you can add a `dark.css` to an existing theme next to the `theme.css` file.
-
-Please also refer to the [Guide for Administrators](https://felixwebdesign.de/en/humhub/docs/dark-mode/).
+To be announced
 
 ## Button
 
