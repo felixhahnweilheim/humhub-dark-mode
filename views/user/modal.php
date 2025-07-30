@@ -1,7 +1,7 @@
 <?php
 
 use humhub\widgets\ModalButton;
-use humhub\widgets\modal\Modal
+use humhub\widgets\modal\Modal;
 
 ?>
 
