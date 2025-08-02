@@ -12,7 +12,15 @@ class DarkModeAsset extends AssetBundle
     public $js = [
         'js/humhub.dark-mode.min.js'
     ];
-    
+
+    public $publishOptions = [
+	    'position' => \yii\web\View::POS_HEAD,
+    ];
+
+    public $defer = false;
+
+    public $async = false;
+
     public static function register($view)
     {
         $view->registerJsConfig('dark-mode', [
