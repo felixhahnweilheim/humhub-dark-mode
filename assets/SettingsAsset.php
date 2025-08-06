@@ -12,10 +12,6 @@ class SettingsAsset extends AssetBundle
     public $js = [
         'js/humhub.dark-mode.switch.min.js'
     ];
-
-    public $depends = [
-        'humhub\modules\darkMode\assets\DarkModeAsset',
-    ];
     
     public static function register($view)
     {

@@ -2,7 +2,6 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     module.initOnPjaxLoad = true;
     module.initOnAjaxLoad = true;
     
-    let darkMode = require('dark-mode');
     let $inputRadio;
     let $cancelBtn;
     let $startVal;
@@ -27,11 +26,41 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     
     function updateMode() {
         var val = $('input[name="UserSetting[darkMode]"]:checked').val();
-        darkMode.setMode(val);
+        setMode(val);
     }
     
     function cancelChanges() {
-        darkMode.setMode($startVal);
+        setMode($startVal);
+    }
+
+    function setMode(val) {
+        if (val == 'light')     setLight();
+        else if (val == 'dark') setDark();
+        else                    setDefault();
+    }
+    
+    function setDefault() {
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            setDark();
+            listenForDefault();
+        } else {
+            setLight();
+            listenForDefault();
+        }
+    }
+    
+    function setLight() {
+        $('html').attr('data-bs-theme', 'light');
+    }
+    
+    function setDark() {
+        $('html').attr('data-bs-theme', 'dark');
+    }
+
+    function listenForDefault() {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            setDefault();
+        })
     }
     
     module.export({

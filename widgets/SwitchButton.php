@@ -3,7 +3,6 @@
 namespace humhub\modules\darkMode\widgets;
 
 use humhub\components\Widget;
-use humhub\modules\ui\icon\widgets\Icon;
 use yii\helpers\Url;
 
 /**

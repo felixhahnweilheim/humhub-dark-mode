@@ -2,19 +2,41 @@
 
 namespace humhub\modules\darkMode;
 
-use humhub\modules\darkMode\widgets\DarkStyle;
 use humhub\modules\darkMode\widgets\SwitchButton;
-use humhub\modules\darkMode\models\Config;
-use humhub\components\ModuleEvent;
+use humhub\modules\darkMode\models\UserSetting;
 use humhub\modules\ui\menu\MenuLink;
+use humhub\components\View;
 use Yii;
 use yii\helpers\Url;
 
 class Events
 {
-    public static function onLayoutAddonsInit($event)
+    public static function onViewBeginBody($event)
     {
-        $event->sender->addWidget(DarkStyle::class);
+        if (
+            Yii::$app->request->isConsoleRequest
+            || Yii::$app->request->isAjax
+        ) {
+            return;
+        }
+
+        $mode = (new UserSetting())->darkMode;
+
+        if ($mode === UserSetting::OPTION_DARK) {
+            Yii::$app->view->registerJs("
+            (function() {
+                $('html').attr('data-bs-theme', 'dark');
+            })();
+            ", View::POS_HEAD);
+        } elseif ($mode === UserSetting::OPTION_DEFAULT) {
+            Yii::$app->view->registerJs("
+            (function() {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    $('html').attr('data-bs-theme', 'dark');
+                }
+            })();
+            ", View::POS_HEAD);
+        }
     }
     
     public static function onNotificationAddonInit($event)
