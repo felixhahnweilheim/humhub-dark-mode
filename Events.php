@@ -2,19 +2,50 @@
 
 namespace humhub\modules\darkMode;
 
-use humhub\modules\darkMode\widgets\DarkStyle;
 use humhub\modules\darkMode\widgets\SwitchButton;
-use humhub\modules\darkMode\models\Config;
-use humhub\components\ModuleEvent;
+use humhub\modules\darkMode\models\UserSetting;
 use humhub\modules\ui\menu\MenuLink;
+use humhub\components\View;
 use Yii;
 use yii\helpers\Url;
 
 class Events
 {
-    public static function onLayoutAddonsInit($event)
+    public static function onViewBeginBody($event)
     {
-        $event->sender->addWidget(DarkStyle::class);
+        if (
+            Yii::$app->request->isConsoleRequest
+            || Yii::$app->request->isAjax
+        ) {
+            return;
+        }
+
+        $mode = (new UserSetting())->darkMode;
+
+        if ($mode === UserSetting::OPTION_DARK) {
+            Yii::$app->view->registerJs("
+            (function() {
+                $('html').attr('data-bs-theme', 'dark');
+            })();
+            ", View::POS_HEAD);
+        } elseif ($mode === UserSetting::OPTION_DEFAULT) {
+            Yii::$app->view->registerJs("
+            (function() {
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    $('html').attr('data-bs-theme', 'dark');
+                    $('html').attr('data-dark-mode-default', true);
+                }
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (!$('html').attr('data-dark-mode-default') || $('html').attr('data-dark-mode-default') == 'false') return;
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        $('html').attr('data-bs-theme', 'dark');
+                    } else {
+                        $('html').attr('data-bs-theme', 'light');
+                    }
+                });
+            })();
+            ", View::POS_HEAD);
+        }
     }
     
     public static function onNotificationAddonInit($event)
@@ -43,40 +74,5 @@ class Events
         ]));
 
         return true;
-    }
-    
-    public static function onDesignSettingForm($event)
-    {
-        $oldTheme = Yii::$app->view->theme->name;
-        $newTheme = $event->sender->theme;
-
-        // Clear dark theme setting if base theme has changed
-        if ($oldTheme !== $newTheme) {
-        
-            $config = new Config();
-            $config->theme = '';
-            $config->save();
-        }
-    }
-    
-    public static function onAfterModuleEnabled(ModuleEvent $event)
-    {
-        if ($event->moduleId == 'enterprise-theme' || $event->moduleId == 'clean-theme') {
-            $settings = Yii::$app->getModule('dark-mode')->settings;
-            $settings->delete('theme');
-            Yii::warning('Note: Your dark theme setting was removed because you activated "' . $event->moduleId . '".', 'dark-mode');
-        }
-    }
-
-    public static function onBeforeModuleDisabled(ModuleEvent $event)
-    {
-        $settings = Yii::$app->getModule('dark-mode')->settings;
-        $darkTheme = $settings->get('theme');
-        
-        // If Enterprise was disabled, remove "DarkEnterprise" setting
-        if ($event->moduleId == 'enterprise-theme' && $darkTheme == 'DarkEnterprise') {
-            $settings->delete('theme');
-            Yii::warning('Note: Your dark theme setting was removed. "enterprise (dark)" is no longer available because you disabled the Enterprise Theme Module.', 'dark-mode');
-        }
-    }    
+    } 
 }
