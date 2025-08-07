@@ -33,7 +33,16 @@ class Events
             (function() {
                 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
                     $('html').attr('data-bs-theme', 'dark');
+                    $('html').attr('data-dark-mode-default', true);
                 }
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                    if (!$('html').attr('data-dark-mode-default') || $('html').attr('data-dark-mode-default') == 'false') return;
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        $('html').attr('data-bs-theme', 'dark');
+                    } else {
+                        $('html').attr('data-bs-theme', 'light');
+                    }
+                });
             })();
             ", View::POS_HEAD);
         }

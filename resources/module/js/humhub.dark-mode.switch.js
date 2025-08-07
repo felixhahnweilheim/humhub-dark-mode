@@ -34,33 +34,28 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     }
 
     function setMode(val) {
-        if (val == 'light')     setLight();
-        else if (val == 'dark') setDark();
-        else                    setDefault();
-    }
-    
-    function setDefault() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            setDark();
-            listenForDefault();
+        if (val == 'light') {
+            $('html').attr('data-bs-theme', 'light');// Bootstrap 5 attribute
+            $('html').attr('data-dark-mode-default', false);// Custom attribute - prevent switching when system preference changes
+        } else if (val == 'dark') {
+            $('html').attr('data-bs-theme', 'dark');
+            $('html').attr('data-dark-mode-default', false);
         } else {
-            setLight();
-            listenForDefault();
+            $('html').attr('data-dark-mode-default', true);// Custom attribute - allow switching based on system preference
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('html').attr('data-bs-theme', 'dark');
+            } else {
+                $('html').attr('data-bs-theme', 'light');
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (!$('html').attr('data-dark-mode-default') || $('html').attr('data-dark-mode-default') == 'false') return;
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    $('html').attr('data-bs-theme', 'dark');
+                } else {
+                    $('html').attr('data-bs-theme', 'light');
+                }
+            });
         }
-    }
-    
-    function setLight() {
-        $('html').attr('data-bs-theme', 'light');
-    }
-    
-    function setDark() {
-        $('html').attr('data-bs-theme', 'dark');
-    }
-
-    function listenForDefault() {
-        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            setDefault();
-        })
     }
     
     module.export({
