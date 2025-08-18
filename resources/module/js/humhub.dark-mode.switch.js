@@ -16,12 +16,14 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     function initializeInputs() {
         $inputRadio = $('#usersetting-darkmode');
         $cancelBtn = $('button[data-modal-close]');
+        $cancelIcon = $('button[data-bs-dismiss="modal"]');
         $startVal = $('input[name="UserSetting[darkMode]"]:checked').val();
     }
     
     function bindInputEvents() {
         $inputRadio.on('input', updateMode);
         $cancelBtn.on('click', cancelChanges);
+        $cancelIcon.on('click', cancelChanges);
     }
     
     function updateMode() {
