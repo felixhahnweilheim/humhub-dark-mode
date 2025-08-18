@@ -5,8 +5,6 @@ This is a breaking change. HumHub 1.18 introduces Bootstrap 5 and therefore them
 - Enh: Update to Bootstrap 5 for HumHub 1.18
   - remove theme setting
 
-- Fix link to Administrators Guide in README.md
-
 ## 1.0.11 (04/07/2025)
 - Fix #67: Layout bug with new versions of Enterprise theme
 
