@@ -1,10 +1,7 @@
 <?php
 
 use humhub\modules\darkMode\Events;
-use humhub\widgets\LayoutAddons;
-use humhub\modules\admin\models\forms\DesignSettingsForm;
 use humhub\widgets\NotificationArea;
-use humhub\components\ModuleManager;
 use humhub\modules\user\widgets\AccountSettingsMenu;
 use humhub\components\View;
 

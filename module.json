@@ -2,7 +2,7 @@
     "id": "dark-mode",
     "version": "2.0.0",
     "name": "Dark Mode",
-    "description": "Adds a Dark Mode to HumHub",
+    "description": "Enables HumHub's Dark Mode",
     "humhub": {
         "minVersion": "1.18"
     },
@@ -16,7 +16,7 @@
     "authors": [
         {
             "name": "Felix Hahn",
-            "email": "info@hahn-felix.de",
+            "email": "info@felixwebdesign.de",
             "role": "Developer"
         }
     ]  
