@@ -11,7 +11,9 @@ You can decide between 3 options:
 
 ## Compatible Themes
 
-To be announced
+- HumHub Community Theme
+- Enterprise Theme
+- Clean Theme
 
 ## Button
 
