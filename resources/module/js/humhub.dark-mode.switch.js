@@ -16,12 +16,14 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     function initializeInputs() {
         $inputRadio = $('#usersetting-darkmode');
         $cancelBtn = $('button[data-modal-close]');
+        $cancelIcon = $('button[data-bs-dismiss="modal"]');
         $startVal = $('input[name="UserSetting[darkMode]"]:checked').val();
     }
     
     function bindInputEvents() {
         $inputRadio.on('input', updateMode);
         $cancelBtn.on('click', cancelChanges);
+        $cancelIcon.on('click', cancelChanges);
     }
     
     function updateMode() {
@@ -32,25 +34,32 @@ humhub.module('dark-mode.switch', function (module, require, $) {
     function cancelChanges() {
         setMode($startVal);
     }
-    
-    function setMode(val) {
-        if      (val == 'default') setDefault();
-        else if (val == 'light')   setLight();
-        else if (val == 'dark')    setDark();
-    }
-    
-    function setDefault() {
-        $('#dark-css-link').attr('media', 'screen and (prefers-color-scheme: dark)');
-    }
-    
-    function setLight() {
-        $('#dark-css-link').attr('media', 'none');
-    }
-    
-   function setDark() {
-        $('#dark-css-link').attr('media', 'all');
-    }
 
+    function setMode(val) {
+        if (val == 'light') {
+            $('html').attr('data-bs-theme', 'light');// Bootstrap 5 attribute
+            $('html').attr('data-dark-mode-default', false);// Custom attribute - prevent switching when system preference changes
+        } else if (val == 'dark') {
+            $('html').attr('data-bs-theme', 'dark');
+            $('html').attr('data-dark-mode-default', false);
+        } else {
+            $('html').attr('data-dark-mode-default', true);// Custom attribute - allow switching based on system preference
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                $('html').attr('data-bs-theme', 'dark');
+            } else {
+                $('html').attr('data-bs-theme', 'light');
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+                if (!$('html').attr('data-dark-mode-default') || $('html').attr('data-dark-mode-default') == 'false') return;
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    $('html').attr('data-bs-theme', 'dark');
+                } else {
+                    $('html').attr('data-bs-theme', 'light');
+                }
+            });
+        }
+    }
+    
     module.export({
         init: init
     });

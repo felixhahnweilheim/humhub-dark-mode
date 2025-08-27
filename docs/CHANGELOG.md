@@ -1,7 +1,9 @@
 Changelog
 =========
-## (unreleased)
-- Fix link to Administrators Guide in README.md
+## 2.0.0 TBA
+This is a breaking change. HumHub 1.18 introduces Bootstrap 5 and therefore themes have to be updated. Dark Mode is now integrated, so this module only provides a way to switch between modes.
+- Enh: Update to Bootstrap 5 for HumHub 1.18
+  - remove theme setting
 
 ## 1.0.11 (04/07/2025)
 - Fix #67: Layout bug with new versions of Enterprise theme
