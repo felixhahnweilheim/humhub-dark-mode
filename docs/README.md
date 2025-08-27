@@ -15,6 +15,8 @@ You can decide between 3 options:
 - Enterprise Theme
 - Clean Theme
 
+Custom Themes based on one of the above are compatible by default.
+
 ## Button
 
 By default the module adds a button to the top bar. This can be switched off in the module settings.
