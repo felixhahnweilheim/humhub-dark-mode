@@ -1,5 +1,8 @@
 Changelog
 =========
+## 2.0.1 (06/09/2025)
+- Fix PHP Warning in migration file (use statement with non-compound nam 'Yii' has no effect)
+
 ## 2.0.0 (27/08/2025)
 This is a breaking change. HumHub 1.18 introduces Bootstrap 5 and therefore themes have to be updated.
 Dark Mode is now integrated in HumHub, so this module only provides a way to switch between modes.
