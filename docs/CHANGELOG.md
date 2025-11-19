@@ -1,5 +1,8 @@
 Changelog
 =========
+## 2.0.2 (19/11/2025)
+- Fix padding of dark mode button
+
 ## 2.0.1 (06/09/2025)
 - Fix PHP Warning in migration file (use statement with non-compound nam 'Yii' has no effect)
 
