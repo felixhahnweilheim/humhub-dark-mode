@@ -1,5 +1,8 @@
 Changelog
 =========
+## 2.1.0 (27/07/2026)
+- Update for HumHub 1.19
+
 ## 2.0.2 (19/11/2025)
 - Fix padding of dark mode button
 

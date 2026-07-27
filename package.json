@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "message": "cd ../../humhub/protected && php yii message/extract-module dark-mode",
+    "zip": "VERSION=${VERSION:-$(node -p \"require('./module.json').version\")} && cd ../ && zip -r dark-mode-v$VERSION.zip dark-mode -x '*.git*'"
+  }
+}
