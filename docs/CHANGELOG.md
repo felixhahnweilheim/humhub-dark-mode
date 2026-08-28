@@ -1,5 +1,8 @@
 Changelog
 =========
+## 2.2.0 (Unreleased)
+- Enh: Add "Default Mode" module setting to configure the default theme ("Follow system", "Light" or "Dark") for users and guests without a saved preference
+
 ## 2.1.0 (27/07/2026)
 - Update for HumHub 1.19
 
