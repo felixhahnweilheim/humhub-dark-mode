@@ -14,6 +14,8 @@ use humhub\widgets\form\ActiveForm;
 
             <?= $form->field($model, 'showButton')->checkbox(); ?>
 
+            <?= $form->field($model, 'defaultMode')->dropDownList($model->getDefaultModeOptions()); ?>
+
         <div class="mb-3">
             <?= Button::primary()->save()->submit() ?>
         </div>

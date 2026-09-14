@@ -22,6 +22,12 @@ Custom Themes based on one of the above are compatible by default.
 By default the module adds a button to the top bar. This can be switched off in the module settings.
 Additionally users can change their preference in the Account Settings menu.
 
+## Default Mode
+
+Administrators can choose the default mode ("Follow system", "Light" or "Dark") in the module settings.
+This is the mode used for users and guests who have not chosen a preference of their own yet. It does not
+override a preference a user has already saved.
+
 ## Translations
 Please only use the [Translation Community](translate.humhub.org/user/account/edit) to contribute translations.
 

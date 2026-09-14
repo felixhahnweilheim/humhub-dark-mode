@@ -1,6 +1,6 @@
 {
     "id": "dark-mode",
-    "version": "2.1.0",
+    "version": "2.2.0",
     "name": "Dark Mode",
     "description": "Enables HumHub's Dark Mode",
     "humhub": {
@@ -19,5 +19,5 @@
             "email": "info@felixwebdesign.de",
             "role": "Developer"
         }
-    ]  
+    ]
 }
