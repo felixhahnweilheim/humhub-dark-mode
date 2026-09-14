@@ -6,4 +6,9 @@ return [
     'Show Button in Top Bar' => 'Afficher le bouton dans la barre supérieure',
     'Users can set their theme preferences also in Account Settings > General.' => 'Les utilisateurs peuvent également définir leurs préférences de thème dans Paramètres du compte > Général.',
     'Adds a Dark Mode Switcher to HumHub' => '',
+    'Dark' => '',
+    'Default Mode' => '',
+    'Follow system' => '',
+    'Light' => '',
+    'The mode used for users and guests who have not chosen a preference of their own yet.' => '',
 ];

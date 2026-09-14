@@ -1,6 +1,6 @@
 Changelog
 =========
-## 2.2.0 (Unreleased)
+## 2.2.0 (14/09/2026)
 - Enh: Add "Default Mode" module setting to configure the default theme ("Follow system", "Light" or "Dark") for users and guests without a saved preference
 
 ## 2.1.0 (27/07/2026)
