@@ -3,24 +3,30 @@
 namespace humhub\modules\darkMode\widgets;
 
 use humhub\components\Widget;
+use humhub\modules\darkMode\assets\SettingsAsset;
+use humhub\modules\darkMode\models\UserSetting;
 use yii\helpers\Url;
 
 /**
- * Button for switching between dark and light mode
+ * Dropdown for switching between dark and light mode
  */
 class SwitchButton extends Widget
 {
-    public $url;
-    
-    public function init()
-    {
-        $this->url = Url::toRoute('/dark-mode/user/modal/');
-    }
-    
     public function run()
     {
+        SettingsAsset::register($this->view);
+
+        $model = new UserSetting();
+
         return $this->render('switchButton', [
-            'url' => $this->url,
+            'url' => Url::to(['/dark-mode/user/switch']),
+            'options' => $model->getOptions(),
+            'current' => $model->darkMode,
+            'icons' => [
+                UserSetting::OPTION_DEFAULT => 'desktop',
+                UserSetting::OPTION_LIGHT => 'sun-o',
+                UserSetting::OPTION_DARK => 'moon-o',
+            ],
         ]);
     }
 }

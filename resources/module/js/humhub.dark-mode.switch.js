@@ -1,39 +1,28 @@
 humhub.module('dark-mode.switch', function (module, require, $) {
     module.initOnPjaxLoad = true;
-    module.initOnAjaxLoad = true;
-    
-    let $inputRadio;
-    let $cancelBtn;
-    let $startVal;
-    
+
+    const client = require('client');
+
     const init = function () {
-        $(function () {
-            initializeInputs();
-            bindInputEvents();
+        // Radio list in Account Settings
+        $('#usersetting-darkmode').on('input', function () {
+            setMode($('input[name="UserSetting[darkMode]"]:checked').val());
         });
     };
-    
-    function initializeInputs() {
-        $inputRadio = $('#usersetting-darkmode');
-        $cancelBtn = $('button[data-modal-close]');
-        $cancelIcon = $('button[data-bs-dismiss="modal"]');
-        $startVal = $('input[name="UserSetting[darkMode]"]:checked').val();
-    }
-    
-    function bindInputEvents() {
-        $inputRadio.on('input', updateMode);
-        $cancelBtn.on('click', cancelChanges);
-        $cancelIcon.on('click', cancelChanges);
-    }
-    
-    function updateMode() {
-        var val = $('input[name="UserSetting[darkMode]"]:checked').val();
-        setMode(val);
-    }
-    
-    function cancelChanges() {
-        setMode($startVal);
-    }
+
+    // Dropdown in top bar
+    const switchMode = function (evt) {
+        const mode = evt.$trigger.data('mode');
+
+        setMode(mode);
+        $('.dark-mode .dropdown-item').removeClass('active');
+        evt.$trigger.addClass('active');
+        $('input[name="UserSetting[darkMode]"][value="' + mode + '"]').prop('checked', true);
+
+        client.post(evt.url, {data: {mode: mode}}).catch(function (e) {
+            module.log.error(e, true);
+        });
+    };
 
     function setMode(val) {
         if (val == 'light') {
@@ -59,8 +48,9 @@ humhub.module('dark-mode.switch', function (module, require, $) {
             });
         }
     }
-    
+
     module.export({
-        init: init
+        init: init,
+        switchMode: switchMode
     });
 });
