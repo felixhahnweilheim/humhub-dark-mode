@@ -5,7 +5,7 @@ namespace humhub\modules\darkMode\models;
 use Yii;
 
 /**
- * UserSetting is the model for the theme preference of guests (via cookie) AND logged in users
+ * UserSetting is the model for the theme preference of guests (via session) AND logged in users
  */
 class UserSetting extends \yii\base\Model
 {
@@ -55,7 +55,7 @@ class UserSetting extends \yii\base\Model
     public function rules()
     {
         return [
-            ['darkMode', 'string']
+            ['darkMode', 'in', 'range' => [self::OPTION_DEFAULT, self::OPTION_LIGHT, self::OPTION_DARK]],
         ];
     }
 

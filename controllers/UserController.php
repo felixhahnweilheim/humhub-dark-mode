@@ -2,18 +2,26 @@
 
 namespace humhub\modules\darkMode\controllers;
 
+use humhub\components\access\ControllerAccess;
 use humhub\modules\darkMode\models\UserSetting;
-use humhub\widgets\modal\ModalClose;
 use Yii;
+use yii\web\BadRequestHttpException;
 
 class UserController extends \humhub\components\Controller
 {
     public $subLayout = '@humhub/modules/user/views/account/_layout';
 
+    /**
+     * Not strict, so guests can switch the mode on public pages even if guest mode is disabled
+     */
+    protected $access = ControllerAccess::class;
+
     protected function getAccessRules()
     {
         return [
-	    ['login' => ['index']]
+            ['login' => ['index']],
+            ['post' => ['switch']],
+            ['json' => ['switch']],
         ];
     }
 
@@ -29,17 +37,19 @@ class UserController extends \humhub\components\Controller
 
         return $this->render('index', ['model' => $form]);
     }
-    
-    public function actionModal()
+
+    /**
+     * Saves the mode selected in the top bar dropdown
+     */
+    public function actionSwitch()
     {
         $form = new UserSetting();
+        $form->darkMode = Yii::$app->request->post('mode');
 
-        if ($form->load(Yii::$app->request->post()) && $form->save()) {
-
-            // Close modal and reload page to make apply asset changes (this way the "Saved" message is not shown)
-            return ModalClose::widget(['saved' => true]);
+        if (!$form->save()) {
+            throw new BadRequestHttpException('Invalid mode.');
         }
 
-        return $this->renderAjax('modal', ['model' => $form]);
+        return ['success' => true];
     }
 }

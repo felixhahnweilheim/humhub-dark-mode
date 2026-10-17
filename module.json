@@ -1,10 +1,10 @@
 {
     "id": "dark-mode",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "name": "Dark Mode",
     "description": "Enables HumHub's Dark Mode",
     "humhub": {
-        "minVersion": "1.19"
+        "minVersion": "1.19.1"
     },
     "keywords": [
         "dark mode", "dark", "theme"

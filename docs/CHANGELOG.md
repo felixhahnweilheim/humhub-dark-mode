@@ -1,5 +1,9 @@
 Changelog
 =========
+## 2.3.0 (Unreleased)
+- Enh: Replace the top bar modal with a dropdown applying the selected mode immediately
+- Fix: Guests could not switch the mode on public pages when guest access is disabled
+
 ## 2.2.0 (14/09/2026)
 - Enh: Add "Default Mode" module setting to configure the default theme ("Follow system", "Light" or "Dark") for users and guests without a saved preference
 

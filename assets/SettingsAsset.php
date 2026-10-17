@@ -3,7 +3,6 @@
 namespace humhub\modules\darkMode\assets;
 
 use humhub\components\assets\AssetBundle;
-use yii\helpers\Url;
 
 class SettingsAsset extends AssetBundle
 {
@@ -12,15 +11,4 @@ class SettingsAsset extends AssetBundle
     public $js = [
         'js/humhub.dark-mode.switch.min.js'
     ];
-    
-    public static function register($view)
-    {
-        $view->registerJsConfig('dark-mode.switch', [
-            'initOnAjaxUrls' => [
-                Url::to(['/dark-mode/user/modal']), // Don't add any params to the URL
-            ]
-        ]);
-        
-        return parent::register($view);
-    }
 }
