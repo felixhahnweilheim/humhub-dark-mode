@@ -1,6 +1,6 @@
 Changelog
 =========
-## 2.3.0 (Unreleased)
+## 2.3.0 (27/10/2026)
 - Enh: Replace the top bar modal with a dropdown applying the selected mode immediately
 - Fix: Guests could not switch the mode on public pages when guest access is disabled
 
